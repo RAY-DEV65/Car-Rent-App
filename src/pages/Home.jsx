@@ -1,4 +1,4 @@
-import Blog from "../components/blog/Blog";
+import Blog from "../components/blog/HomeBlog";
 import CallToAction from "../components/call-to-action/CallToAction";
 import CarBrands from "../components/car-brand/CarBrands";
 import CarCategory from "../components/car-category/CarCategory";

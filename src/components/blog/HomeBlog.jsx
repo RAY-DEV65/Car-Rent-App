@@ -1,4 +1,4 @@
-import "./Blog.css";
+import "./HomeBlog.css";
 import { useEffect, useState, useRef } from "react";
 import car from "../../assets/car.jpeg";
 import car8 from "../../assets/car8.jpeg";

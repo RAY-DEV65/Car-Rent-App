@@ -1,0 +1,526 @@
+/* =================================
+   NEWSLETTER SECTION
+================================= */
+
+.blog-newsletter-section {
+  width: 100%;
+  padding: 45px 5%;
+  background: #f7f6f8;
+  overflow: hidden;
+}
+
+
+/* =================================
+   CONTAINER
+================================= */
+
+.blog-newsletter-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 220px;
+  margin: 0 auto;
+  padding: 32px 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+
+  border-radius: 18px;
+  background: #111014;
+  overflow: hidden;
+
+  opacity: 0;
+  transform: translateY(30px);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+.blog-newsletter-visible .blog-newsletter-container {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* =================================
+   BACKGROUND DETAILS
+================================= */
+
+.blog-newsletter-container::before {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  right: -120px;
+  top: -145px;
+
+  border-radius: 50%;
+  background: rgba(60, 0, 157, 0.2);
+
+  pointer-events: none;
+}
+
+.blog-newsletter-container::after {
+  content: "";
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  left: -85px;
+  bottom: -105px;
+
+  border-radius: 50%;
+  background: rgba(60, 0, 157, 0.1);
+
+  pointer-events: none;
+}
+
+
+/* =================================
+   CONTENT
+================================= */
+
+.blog-newsletter-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 540px;
+  flex: 1;
+}
+
+.blog-newsletter-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-bottom: 12px;
+
+  color: #a986d4;
+
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.blog-newsletter-label::before {
+  content: "";
+
+  width: 24px;
+  height: 2px;
+
+  background: #3c009d;
+}
+
+
+/* =================================
+   HEADING
+================================= */
+
+.blog-newsletter-content h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(
+    2.3rem,
+    3.5vw,
+    3.2rem
+  );
+
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.05em;
+}
+
+.blog-newsletter-content h2 span {
+  margin-left: 7px;
+  color: #8e5dcc;
+}
+
+
+/* =================================
+   DESCRIPTION
+================================= */
+
+.blog-newsletter-content p {
+  max-width: 510px;
+
+  margin: 15px 0 0;
+
+  color: rgba(255, 255, 255, 0.68);
+
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+
+/* =================================
+   ACTION AREA
+================================= */
+
+.blog-newsletter-action {
+  position: relative;
+  z-index: 2;
+
+  width: 420px;
+  flex-shrink: 0;
+}
+
+
+/* =================================
+   FORM
+================================= */
+
+.blog-newsletter-form {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 6px;
+
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.06);
+}
+
+
+/* =================================
+   INPUT
+================================= */
+
+.blog-newsletter-input {
+  min-width: 0;
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0 10px;
+}
+
+.blog-newsletter-input svg {
+  width: 18px;
+  height: 18px;
+
+  flex-shrink: 0;
+
+  color: #a17bd1;
+}
+
+.blog-newsletter-input input {
+  width: 100%;
+  height: 46px;
+
+  padding: 0;
+
+  border: none;
+  outline: none;
+
+  color: #ffffff;
+  background: transparent;
+
+  font-family: inherit;
+  font-size: 0.85rem;
+}
+
+.blog-newsletter-input input::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+
+/* =================================
+   BUTTON
+================================= */
+
+.blog-newsletter-button {
+  height: 46px;
+
+  padding: 0 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  border: none;
+  border-radius: 7px;
+
+  color: #ffffff;
+  background: #3c009d;
+
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 800;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.blog-newsletter-button svg {
+  width: 15px;
+  height: 15px;
+
+  transition: transform 0.3s ease;
+}
+
+.blog-newsletter-button:hover {
+  background: #4b00bd;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(60, 0, 157, 0.25);
+}
+
+.blog-newsletter-button:hover svg {
+  transform: translateX(3px);
+}
+
+
+/* =================================
+   NOTE
+================================= */
+
+.blog-newsletter-note {
+  display: block;
+
+  margin-top: 10px;
+
+  color: rgba(255, 255, 255, 0.45);
+
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+
+/* =================================
+   SUCCESS STATE
+================================= */
+
+.blog-newsletter-success {
+  min-height: 95px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 11px;
+
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.blog-newsletter-success-icon {
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  color: #ffffff;
+  background: #3c009d;
+}
+
+.blog-newsletter-success-icon svg {
+  width: 21px;
+  height: 21px;
+}
+
+.blog-newsletter-success-content {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.blog-newsletter-success-content strong {
+  color: #ffffff;
+
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.blog-newsletter-success-content span {
+  color: rgba(255, 255, 255, 0.6);
+
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.blog-newsletter-success-content button {
+  width: fit-content;
+
+  margin-top: 5px;
+  padding: 0;
+
+  border: none;
+
+  color: #a17bd1;
+  background: transparent;
+
+  font-family: inherit;
+  font-size: 0.72rem;
+
+  cursor: pointer;
+}
+
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 850px) {
+  .blog-newsletter-container {
+    padding: 32px;
+
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 25px;
+  }
+
+  .blog-newsletter-content {
+    max-width: 650px;
+  }
+
+  .blog-newsletter-action {
+    width: 100%;
+    max-width: 650px;
+  }
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+  .blog-newsletter-section {
+    padding: 40px 20px;
+  }
+
+  .blog-newsletter-container {
+    min-height: auto;
+
+    padding: 28px 20px;
+
+    gap: 23px;
+
+    border-radius: 15px;
+  }
+
+  .blog-newsletter-content h2 {
+    font-size: 2.15rem;
+  }
+
+  .blog-newsletter-content h2 span {
+    display: block;
+
+    margin-top: 5px;
+    margin-left: 0;
+  }
+
+  .blog-newsletter-content p {
+    font-size: 0.84rem;
+    line-height: 1.7;
+  }
+
+  .blog-newsletter-action {
+    width: 100%;
+  }
+
+  .blog-newsletter-form {
+    flex-direction: column;
+    align-items: stretch;
+
+    padding: 6px;
+  }
+
+  .blog-newsletter-input {
+    width: 100%;
+  }
+
+  .blog-newsletter-input input {
+    font-size: 0.85rem;
+  }
+
+  .blog-newsletter-button {
+    width: 100%;
+  }
+
+  .blog-newsletter-note {
+    font-size: 0.7rem;
+  }
+}
+
+
+/* =================================
+   SMALL MOBILE
+================================= */
+
+@media (max-width: 400px) {
+  .blog-newsletter-section {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .blog-newsletter-container {
+    padding-right: 17px;
+    padding-left: 17px;
+  }
+
+  .blog-newsletter-content h2 {
+    font-size: 1.95rem;
+  }
+
+  .blog-newsletter-content p {
+    font-size: 0.82rem;
+  }
+}
+
+
+/* =================================
+   REDUCED MOTION
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .blog-newsletter-container {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .blog-newsletter-button,
+  .blog-newsletter-button svg {
+    transition: none;
+  }
+}

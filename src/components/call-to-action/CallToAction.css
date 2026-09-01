@@ -1,30 +1,32 @@
 
+/* =================================
+   CALL TO ACTION
+================================= */
+
 .cta-section {
   position: relative;
   width: 90%;
-  min-height: 320px;
+  min-height: 35vh;
   margin: 10px 5%;
-  padding: 60px 50px;
-
+  padding: 30px 45px;
   display: grid;
   grid-template-columns: 45% 55%;
   align-items: center;
-
   box-sizing: border-box;
   overflow: hidden;
-
   background: linear-gradient(
     120deg,
     #210052,
     #3c009d,
     #18002f
   );
-
   border-radius: 30px;
 }
 
 
-/* Content */
+/* =================================
+   CONTENT
+================================= */
 
 .cta-content {
   position: relative;
@@ -34,51 +36,43 @@
 
 .cta-subtitle {
   display: inline-block;
-  margin-bottom: 12px;
-
-  font-size: 12px;
+  margin-bottom: 8px;
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 2px;
-
+  letter-spacing: 1.8px;
   color: rgba(255, 255, 255, 0.75);
 }
 
 .cta-content h2 {
-  margin: 0 0 16px;
-
+  margin: 0 0 12px;
   color: white;
-  font-size: clamp(2.2rem, 4vw, 3.6rem);
-  line-height: 1.1;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  line-height: 1.05;
 }
 
 .cta-content p {
-  max-width: 450px;
-  margin: 0 0 22px;
-
+  max-width: 420px;
+  margin: 0 0 18px;
   color: rgba(255, 255, 255, 0.8);
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 
-/* Button */
+/* =================================
+   BUTTON
+================================= */
 
 .cta-button {
   border: none;
   outline: none;
-
-  padding: 11px 24px;
-
+  padding: 10px 22px;
   border-radius: 50px;
-
   background: white;
   color: #3c009d;
-
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
-
   cursor: pointer;
-
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -86,20 +80,19 @@
 
 .cta-button:hover {
   transform: translateY(-3px);
-
   box-shadow:
     0 8px 25px rgba(0, 0, 0, 0.25);
 }
 
 
-/* Car */
+/* =================================
+   CAR
+================================= */
 
 .cta-car {
   position: relative;
   z-index: 2;
-
   height: 100%;
-
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -108,119 +101,177 @@
 .cta-car img {
   position: relative;
   z-index: 2;
-
   width: 100%;
-  max-width: 650px;
-
+  max-width: 550px;
   height: auto;
-
   object-fit: contain;
-
   transform: translateX(-5%);
 }
 
 
-/* Glow */
+/* =================================
+   GLOW
+================================= */
 
 .cta-glow {
   position: absolute;
-
-  width: 300px;
-  height: 300px;
-
-  right: -80px;
+  width: 250px;
+  height: 250px;
+  right: -70px;
   top: 50%;
-
   transform: translateY(-50%);
-
   border-radius: 50%;
-
   background: rgba(255, 255, 255, 0.05);
-
   box-shadow:
-    0 0 80px rgba(255, 255, 255, 0.15);
+    0 0 70px rgba(255, 255, 255, 0.15);
 }
 
 
-/* Tablet */
+/* =================================
+   TABLET
+================================= */
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .cta-section {
-    min-height: 380px;
-    padding: 50px 35px;
-
+    min-height: 35vh;
+    padding: 28px 30px;
     grid-template-columns: 45% 55%;
-    gap: 10px;
+    gap: 5px;
   }
 
   .cta-content h2 {
-    font-size: 2.6rem;
+    font-size: 2.4rem;
   }
 
   .cta-content p {
-    font-size: 15px;
+    font-size: 13px;
   }
 
   .cta-car img {
-    max-width: 500px;
+    max-width: 450px;
   }
 }
 
 
-/* Mobile */
+/* =================================
+   MOBILE
+================================= */
 
 @media (max-width: 768px) {
   .cta-section {
     grid-template-columns: 1fr;
-
     min-height: auto;
-
-    padding: 45px 25px 0;
-
-    margin: 60px 5%;
+    padding: 30px 25px 0;
+    margin: 35px 5%;
+    border-radius: 25px;
   }
 
   .cta-subtitle {
-    font-size: 10px;
-    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+    font-size: 9px;
+    letter-spacing: 1.4px;
   }
 
   .cta-content h2 {
-    font-size: 2.2rem;
+    margin-bottom: 10px;
+    font-size: 2rem;
   }
 
   .cta-content p {
-    font-size: 14px;
-    line-height: 1.6;
-
-    margin-bottom: 20px;
+    margin-bottom: 16px;
+    font-size: 13px;
+    line-height: 1.5;
   }
 
   .cta-button {
-    padding: 11px 23px;
-    font-size: 13px;
+    padding: 10px 21px;
+    font-size: 12px;
   }
 
   .cta-car {
     width: 100%;
-
     height: auto;
-
-    margin-top: 25px;
-
+    margin-top: 12px;
     justify-content: center;
   }
 
   .cta-car img {
-    width: 110%;
-    max-width: 450px;
-
+    width: 95%;
+    max-width: 350px;
     transform: none;
   }
 
   .cta-glow {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
   }
 }
 
+
+/* =================================
+   SMALL MOBILE
+================================= */
+
+@media (max-width: 400px) {
+  .cta-section {
+    padding: 28px 20px 0;
+    margin: 30px 5%;
+    border-radius: 22px;
+  }
+
+  .cta-content h2 {
+    font-size: 1.85rem;
+  }
+
+  .cta-content p {
+    font-size: 12.5px;
+  }
+
+  .cta-car {
+    margin-top: 10px;
+  }
+
+  .cta-car img {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+
+/* =================================
+   VERY SMALL MOBILE
+================================= */
+
+@media (max-width: 350px) {
+  .cta-section {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .cta-content h2 {
+    font-size: 1.7rem;
+  }
+
+  .cta-content p {
+    font-size: 12px;
+  }
+
+  .cta-button {
+    padding: 9px 19px;
+  }
+}
+
+
+/* =================================
+   REDUCED MOTION
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-button {
+    transition: none;
+  }
+
+  .cta-button:hover {
+    transform: none;
+  }
+}
