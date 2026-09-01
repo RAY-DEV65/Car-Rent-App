@@ -1,0 +1,64 @@
+.car-brands {
+  overflow: hidden;
+  padding: 35px 0;
+  position: relative;
+  margin: 0 5%;
+  border-radius: 600px;
+}
+
+.brands-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: slideBrands 20s linear infinite;
+  will-change: transform;
+}
+
+.brand:hover {
+  transform: translateY(-10px);
+}
+
+.brand {
+  width: 160px;
+  height: 100px;
+  margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: #af7eff4f;
+  border-radius: 15px;
+  transition: 0.2s;
+  border: 1px solid #3c009d;
+}
+
+.brand img {
+  width: 90px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.brand span {
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #555;
+}
+
+.brand:hover img {
+  transform: scale(1.12);
+}
+
+.brand:hover span {
+  color: #3c009d;
+}
+
+@keyframes slideBrands {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

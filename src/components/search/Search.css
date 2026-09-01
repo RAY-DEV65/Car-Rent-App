@@ -1,0 +1,314 @@
+.car-search {
+  background-color: #3c009d;
+  margin: 0 5%;
+  margin-top: -70px;
+
+  position: relative;
+  z-index: 1;
+
+  padding: 20px 30px;
+  border-radius: 15px;
+
+  box-sizing: border-box;
+
+  opacity: 0;
+  animation: fadeUp 0.8s ease-in-out forwards;
+  animation-delay: 0.9s;
+}
+
+/* =========================
+   SEARCH HEADER
+========================= */
+
+.search-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.search-text {
+  min-width: 0;
+}
+
+.search-container h2 {
+  margin: 0 0 5px;
+
+  color: white;
+  font-size: clamp(24px, 3vw, 32px);
+  line-height: 1.2;
+}
+
+.search-container p {
+  margin: 0;
+
+  color: white;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* =========================
+   LIVE BUTTON
+========================= */
+
+.live-btn {
+  flex-shrink: 0;
+
+  border: none;
+  padding: 10px 15px;
+
+  cursor: pointer;
+
+  border-radius: 5px;
+
+  background: #ffffff;
+  color: #6a11cb;
+
+  font-weight: 600;
+
+  animation: pulse 1.2s infinite;
+}
+
+/* =========================
+   SEARCH FORM
+========================= */
+
+.search-form {
+  background: white;
+
+  display: flex;
+  align-items: flex-end;
+
+  gap: 15px;
+
+  padding: 15px;
+
+  margin-top: 15px;
+
+  border-radius: 10px;
+
+  box-sizing: border-box;
+}
+
+.form-group {
+  flex: 1;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+
+  font-weight: 600;
+  color: #0a0a0a;
+
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+
+  padding: 13px;
+
+  border: 1px solid #a19f9f;
+  border-radius: 8px;
+
+  font-size: 15px;
+
+  outline: none;
+
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #6a11cb;
+}
+
+/* =========================
+   SEARCH BUTTON
+========================= */
+
+.search-btn {
+  flex-shrink: 0;
+
+  padding: 14px 25px;
+
+  border: none;
+
+  color: white;
+  background: #0a0a0a;
+
+  border-radius: 8px;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    transform 0.2s ease;
+}
+
+.search-btn:hover {
+  background: #6a11cb;
+}
+
+.search-btn:active {
+  transform: scale(0.95);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1024px) {
+  .car-search {
+    padding: 20px;
+  }
+
+  .search-form {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    align-items: end;
+  }
+
+  .search-btn {
+    width: 100%;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .car-search {
+    margin: 0 5%;
+    margin-top: -40px;
+
+    padding: 20px 15px;
+
+    border-radius: 12px;
+  }
+
+  /* Header */
+
+  .search-head {
+    align-items: flex-start;
+  }
+
+  .search-container h2 {
+    font-size: 24px;
+  }
+
+  .search-container p {
+    font-size: 13px;
+
+    max-width: 280px;
+  }
+
+  .live-btn {
+    padding: 8px 11px;
+  }
+
+  /* Form */
+
+  .search-form {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 12px;
+
+    padding: 15px;
+  }
+
+  .form-group {
+    width: 100%;
+  }
+
+  .form-group label {
+    font-size: 13px;
+  }
+
+  .form-group input,
+  .form-group select {
+    width: 100%;
+
+    padding: 12px;
+
+    font-size: 14px;
+  }
+
+  .search-btn {
+    width: 100%;
+
+    padding: 13px;
+  }
+}
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 380px) {
+  .car-search {
+    padding: 18px 12px;
+  }
+
+  .search-container h2 {
+    font-size: 21px;
+  }
+
+  .search-container p {
+    font-size: 12px;
+  }
+
+  .live-btn {
+    padding: 7px 9px;
+    font-size: 12px;
+  }
+
+  .search-form {
+    padding: 12px;
+  }
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 254, 255, 0.7);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 254, 255, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(245, 244, 245, 0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
