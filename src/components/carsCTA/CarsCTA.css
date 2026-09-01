@@ -1,0 +1,533 @@
+/* =================================
+   CARS CTA SECTION
+================================= */
+
+.cars-cta-section {
+  position: relative;
+
+  width: 100%;
+
+  padding: 30px 5% 80px;
+
+  overflow: hidden;
+
+  background: #ffffff;
+}
+
+.cars-cta-container {
+  position: relative;
+
+  width: 100%;
+
+  max-width: 1200px;
+
+  min-height: 430px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  overflow: hidden;
+
+  border-radius: 24px;
+
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(116, 38, 190, 0.4),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 15% 90%,
+      rgba(60, 0, 157, 0.45),
+      transparent 35%
+    ),
+    #18003f;
+
+  box-shadow:
+    0 25px 60px
+    rgba(35, 0, 75, 0.16);
+
+  isolation: isolate;
+}
+
+/* =================================
+   BACKGROUND GLOW
+================================= */
+
+.cars-cta-glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  z-index: -1;
+
+  filter: blur(5px);
+}
+
+.cars-cta-glow-one {
+  width: 280px;
+
+  height: 280px;
+
+  top: -150px;
+
+  right: 80px;
+
+  background:
+    rgba(255, 255, 255, 0.07);
+}
+
+.cars-cta-glow-two {
+  width: 350px;
+
+  height: 350px;
+
+  bottom: -240px;
+
+  left: 80px;
+
+  background:
+    rgba(139, 71, 207, 0.15);
+}
+
+/* =================================
+   CONTENT
+================================= */
+
+.cars-cta-content {
+  max-width: 720px;
+
+  padding: 70px 30px;
+
+  text-align: center;
+
+  opacity: 0;
+
+  transform: translateY(45px);
+
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+.cars-cta-visible
+.cars-cta-content {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+/* =================================
+   EYEBROW
+================================= */
+
+.cars-cta-eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color:
+    rgba(255, 255, 255, 0.65);
+
+  font-size: 0.62rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.15em;
+
+  text-transform: uppercase;
+}
+
+.cars-cta-eyebrow::before,
+.cars-cta-eyebrow::after {
+  content: "";
+
+  width: 22px;
+
+  height: 1px;
+
+  background:
+    rgba(255, 255, 255, 0.4);
+}
+
+/* =================================
+   HEADING
+================================= */
+
+.cars-cta-content h2 {
+  margin: 17px 0 0;
+
+  color: #ffffff;
+
+  font-size: clamp(
+    2.5rem,
+    5vw,
+    4.4rem
+  );
+
+  font-weight: 850;
+
+  line-height: 0.95;
+
+  letter-spacing: -0.065em;
+}
+
+.cars-cta-content h2 span {
+  display: block;
+
+  margin-top: 7px;
+
+  color: #c8a8f5;
+}
+
+/* =================================
+   DESCRIPTION
+================================= */
+
+.cars-cta-content > p {
+  max-width: 520px;
+
+  margin: 20px auto 0;
+
+  color:
+    rgba(255, 255, 255, 0.67);
+
+  font-size: 0.78rem;
+
+  line-height: 1.75;
+}
+
+/* =================================
+   ACTIONS
+================================= */
+
+.cars-cta-actions {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  margin-top: 30px;
+}
+
+/* =================================
+   PRIMARY BUTTON
+================================= */
+
+.cars-cta-primary-button {
+  min-height: 45px;
+
+  padding: 0 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  color: #3c009d;
+
+  background: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 0.62rem;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 25px
+    rgba(0, 0, 0, 0.14);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.cars-cta-primary-button svg {
+  width: 14px;
+
+  height: 14px;
+
+  transition:
+    transform 0.3s ease;
+}
+
+.cars-cta-primary-button:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 13px 30px
+    rgba(0, 0, 0, 0.2);
+}
+
+.cars-cta-primary-button:hover svg {
+  transform: translateX(4px);
+}
+
+/* =================================
+   SECONDARY BUTTON
+================================= */
+
+.cars-cta-secondary-button {
+  min-height: 45px;
+
+  padding: 0 17px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.22);
+
+  border-radius: 9px;
+
+  color: #ffffff;
+
+  background:
+    rgba(255, 255, 255, 0.07);
+
+  font-family: inherit;
+
+  font-size: 0.62rem;
+
+  font-weight: 750;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(8px);
+
+  -webkit-backdrop-filter: blur(8px);
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.cars-cta-secondary-button svg {
+  width: 13px;
+
+  height: 13px;
+}
+
+.cars-cta-secondary-button:hover {
+  border-color:
+    rgba(255, 255, 255, 0.45);
+
+  background:
+    rgba(255, 255, 255, 0.13);
+
+  transform: translateY(-3px);
+}
+
+/* =================================
+   SIDE ELEMENT
+================================= */
+
+.cars-cta-side {
+  position: absolute;
+
+  right: 30px;
+
+  bottom: 30px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  opacity: 0;
+
+  transform: translateX(30px);
+
+  transition:
+    opacity 0.8s ease 0.25s,
+    transform 0.8s ease 0.25s;
+}
+
+.cars-cta-visible
+.cars-cta-side {
+  opacity: 1;
+
+  transform: translateX(0);
+}
+
+.cars-cta-side-number {
+  color:
+    rgba(255, 255, 255, 0.45);
+
+  font-size: 0.55rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+}
+
+.cars-cta-side-line {
+  width: 30px;
+
+  height: 1px;
+
+  background:
+    rgba(255, 255, 255, 0.25);
+}
+
+.cars-cta-side-text {
+  color:
+    rgba(255, 255, 255, 0.45);
+
+  font-size: 0.53rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 800px) {
+  .cars-cta-section {
+    padding: 25px 5% 70px;
+  }
+
+  .cars-cta-container {
+    min-height: 400px;
+
+    border-radius: 20px;
+  }
+
+  .cars-cta-content {
+    padding: 60px 25px;
+  }
+
+  .cars-cta-side {
+    display: none;
+  }
+}
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+  .cars-cta-section {
+    padding: 20px 20px 60px;
+  }
+
+  .cars-cta-container {
+    min-height: 430px;
+
+    border-radius: 18px;
+  }
+
+  .cars-cta-content {
+    padding: 55px 20px;
+  }
+
+  .cars-cta-content h2 {
+    font-size: 2.7rem;
+  }
+
+  .cars-cta-content > p {
+    font-size: 0.69rem;
+
+    line-height: 1.7;
+  }
+
+  .cars-cta-actions {
+    flex-direction: column;
+
+    width: 100%;
+
+    gap: 8px;
+  }
+
+  .cars-cta-primary-button,
+  .cars-cta-secondary-button {
+    width: 100%;
+  }
+}
+
+/* =================================
+   SMALL MOBILE
+================================= */
+
+@media (max-width: 400px) {
+  .cars-cta-section {
+    padding-right: 16px;
+
+    padding-left: 16px;
+  }
+
+  .cars-cta-container {
+    min-height: 410px;
+  }
+
+  .cars-cta-content {
+    padding-right: 16px;
+
+    padding-left: 16px;
+  }
+
+  .cars-cta-content h2 {
+    font-size: 2.4rem;
+  }
+}
+
+/* =================================
+   REDUCED MOTION
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .cars-cta-content,
+  .cars-cta-side {
+    opacity: 1;
+
+    transform: none;
+
+    transition: none;
+  }
+
+  .cars-cta-primary-button,
+  .cars-cta-primary-button svg,
+  .cars-cta-secondary-button {
+    transition: none;
+  }
+}

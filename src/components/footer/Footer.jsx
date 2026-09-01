@@ -50,16 +50,13 @@ const Footer = () => {
           <ul>
            <li> <Link to="/">Home</Link></li>
             <li>
-              <a href="#">Cars</a>
+              <Link to="/car">Cars</Link>
             </li>
             <li>
              <Link to="/about">About</Link>
             </li>
             <li>
-              <a href="#">Services</a>
-            </li>
-            <li>
-              <a href="#">Blog</a>
+              <Link to="/blog">Blog</Link>
             </li>
             <li>
               <a href="#">Contact Us</a>

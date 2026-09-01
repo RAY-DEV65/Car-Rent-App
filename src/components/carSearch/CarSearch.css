@@ -1,0 +1,329 @@
+/* =================================
+   CAR SEARCH SECTION
+================================= */
+
+.car-search-section {
+  position: relative;
+  width: 100%;
+  padding: 35px 5%;
+  background: #ffffff;
+  z-index: 5;
+}
+
+.car-search-container {
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+
+/* =================================
+   SEARCH FORM
+================================= */
+
+.car-search-form {
+  display: grid;
+  grid-template-columns:
+    1.25fr
+    1.15fr
+    0.9fr
+    0.9fr
+    auto;
+  align-items: stretch;
+  width: 100%;
+  min-height: 82px;
+  padding: 8px;
+  border: 1px solid #e7e3eb;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow:
+    0 15px 45px rgba(35, 18, 55, 0.09);
+}
+
+
+/* =================================
+   SEARCH FIELD
+================================= */
+
+.car-search-field {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  padding: 10px 18px;
+  border-right: 1px solid #ece9ef;
+}
+
+
+/* =================================
+   SEARCH ICON
+================================= */
+
+.car-search-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  margin-right: 12px;
+  border-radius: 10px;
+  color: #3c009d;
+  background: #f3eff9;
+}
+
+.car-search-icon svg {
+  width: 17px;
+  height: 17px;
+}
+
+
+/* =================================
+   FIELD CONTENT
+================================= */
+
+.car-search-field-content {
+  min-width: 0;
+  width: 100%;
+}
+
+.car-search-field-content label {
+  display: block;
+  margin-bottom: 5px;
+  color: #242027;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+
+/* =================================
+   TEXT INPUT
+================================= */
+
+.car-search-field-content input {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  outline: none;
+  color: #252129;
+  background: transparent;
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.car-search-field-content input::placeholder {
+  color: #a19ca5;
+}
+
+.car-search-field-content input:focus {
+  outline: none;
+}
+
+
+/* =================================
+   SELECT
+================================= */
+
+.car-search-field-content select {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  outline: none;
+  color: #252129;
+  background: transparent;
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.car-search-field-content select:focus {
+  outline: none;
+}
+
+.car-search-field-content select option {
+  color: #252129;
+  background: #ffffff;
+}
+
+
+/* =================================
+   SEARCH BUTTON
+================================= */
+
+.car-search-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 145px;
+  margin: 0;
+  padding: 0 22px;
+  border: none;
+  border-radius: 13px;
+  color: #ffffff;
+  background: #3c009d;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow:
+    0 8px 20px rgba(60, 0, 157, 0.2);
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.car-search-button svg {
+  width: 16px;
+  height: 16px;
+}
+
+.car-search-button:hover {
+  background: #310080;
+  transform: translateY(-2px);
+  box-shadow:
+    0 12px 25px rgba(60, 0, 157, 0.27);
+}
+
+.car-search-button:active {
+  transform: translateY(0);
+}
+
+
+/* =================================
+   CLEAR SEARCH
+================================= */
+
+.car-search-clear {
+  display: block;
+  margin: 12px 5px 0 auto;
+  padding: 0;
+  border: none;
+  color: #77717d;
+  background: transparent;
+  font-family: inherit;
+  font-size: 0.68rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    color 0.25s ease;
+}
+
+.car-search-clear:hover {
+  color: #3c009d;
+}
+
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 1000px) {
+
+  .car-search-section {
+    padding: 30px 4%;
+  }
+
+  .car-search-form {
+    grid-template-columns:
+      1fr
+      1fr;
+    gap: 0;
+    padding: 10px;
+  }
+
+  .car-search-field {
+    min-height: 75px;
+    border-right: none;
+    border-bottom: 1px solid #ece9ef;
+  }
+
+  .car-search-field:nth-child(2) {
+    border-bottom: 1px solid #ece9ef;
+  }
+
+  .car-search-button {
+    min-height: 58px;
+    margin-top: 10px;
+  }
+
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 650px) {
+
+  .car-search-section {
+    padding: 25px 20px;
+  }
+
+  .car-search-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 8px;
+    border-radius: 16px;
+  }
+
+  .car-search-field {
+    width: 100%;
+    min-height: 72px;
+    padding: 10px 12px;
+    border-right: none;
+    border-bottom: 1px solid #ece9ef;
+  }
+
+  .car-search-field:last-of-type {
+    border-bottom: none;
+  }
+
+  .car-search-button {
+    width: 100%;
+    min-height: 56px;
+    margin-top: 8px;
+  }
+
+  .car-search-clear {
+    margin-top: 10px;
+  }
+
+}
+
+
+/* =================================
+   SMALL MOBILE
+================================= */
+
+@media (max-width: 400px) {
+
+  .car-search-section {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .car-search-field {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  .car-search-icon {
+    width: 34px;
+    height: 34px;
+    margin-right: 10px;
+  }
+
+  .car-search-field-content input,
+  .car-search-field-content select {
+    font-size: 0.72rem;
+  }
+
+}

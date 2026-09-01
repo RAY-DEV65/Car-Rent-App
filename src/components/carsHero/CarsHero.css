@@ -1,0 +1,921 @@
+/* =================================
+   CARS HERO
+================================= */
+
+.cars-hero-section {
+  position: relative;
+
+  min-height: 100vh;
+
+  padding: 140px 5% 100px;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 75% 50%,
+      #29104d 0%,
+      #150b24 35%,
+      #08070c 75%
+    );
+
+  isolation: isolate;
+}
+
+/* =================================
+   DARK OVERLAY
+================================= */
+
+.cars-hero-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 4, 8, 0.95) 0%,
+      rgba(8, 6, 12, 0.82) 35%,
+      rgba(20, 8, 35, 0.4) 70%,
+      rgba(8, 7, 12, 0.65) 100%
+    );
+
+  z-index: -2;
+}
+
+/* =================================
+   PURPLE GLOW
+================================= */
+
+.cars-hero-glow {
+  position: absolute;
+
+  top: 10%;
+  right: 5%;
+
+  width: 600px;
+  height: 600px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(102, 39, 172, 0.3) 0%,
+      rgba(60, 0, 157, 0.12) 40%,
+      transparent 70%
+    );
+
+  filter: blur(30px);
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+/* =================================
+   GRID
+================================= */
+
+.cars-hero-grid {
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0.15;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.08) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.08) 1px,
+      transparent 1px
+    );
+
+  background-size: 60px 60px;
+
+  mask-image:
+    linear-gradient(
+      to right,
+      transparent,
+      black 35%,
+      black 75%,
+      transparent
+    );
+
+  -webkit-mask-image:
+    linear-gradient(
+      to right,
+      transparent,
+      black 35%,
+      black 75%,
+      transparent
+    );
+
+  z-index: -1;
+}
+
+/* =================================
+   CONTAINER
+================================= */
+
+.cars-hero-container {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1350px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.85fr)
+    minmax(0, 1.15fr);
+
+  align-items: center;
+
+  gap: 70px;
+}
+
+/* =================================
+   CONTENT
+================================= */
+
+.cars-hero-content {
+  max-width: 650px;
+
+  opacity: 0;
+
+  transform: translateX(-100px);
+
+  transition:
+    opacity 1s ease,
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.cars-hero-active .cars-hero-content {
+  opacity: 1;
+
+  transform: translateX(0);
+}
+
+/* =================================
+   EYEBROW
+================================= */
+
+.cars-hero-eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 24px;
+
+  color: #c8a9e8;
+
+  font-size: 0.72rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.15em;
+
+  text-transform: uppercase;
+}
+
+.cars-hero-eyebrow::before {
+  content: "";
+
+  width: 32px;
+  height: 2px;
+
+  background: #a56ddd;
+}
+
+/* =================================
+   TITLE
+================================= */
+
+.cars-hero-title {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(
+    3.3rem,
+    6vw,
+    6.3rem
+  );
+
+  font-weight: 850;
+
+  line-height: 0.94;
+
+  letter-spacing: -0.065em;
+}
+
+.cars-hero-title span {
+  display: block;
+
+  color: #a56ddd;
+}
+
+/* =================================
+   DESCRIPTION
+================================= */
+
+.cars-hero-description {
+  max-width: 560px;
+
+  margin: 30px 0 0;
+
+  color: rgba(255, 255, 255, 0.66);
+
+  font-size: 1rem;
+
+  line-height: 1.8;
+}
+
+/* =================================
+   ACTIONS
+================================= */
+
+.cars-hero-actions {
+  margin-top: 36px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+/* =================================
+   PRIMARY BUTTON
+================================= */
+
+.cars-hero-primary-button {
+  min-height: 52px;
+
+  padding: 0 24px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #5d16a8,
+      #3c009d
+    );
+
+  font-family: inherit;
+
+  font-size: 0.8rem;
+
+  font-weight: 750;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 15px 35px rgba(60, 0, 157, 0.3);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    filter 0.3s ease;
+}
+
+.cars-hero-primary-button svg {
+  width: 17px;
+  height: 17px;
+
+  transition:
+    transform 0.3s ease;
+}
+
+.cars-hero-primary-button:hover {
+  transform: translateY(-3px);
+
+  filter: brightness(1.12);
+
+  box-shadow:
+    0 20px 45px rgba(60, 0, 157, 0.4);
+}
+
+.cars-hero-primary-button:hover svg {
+  transform: translateX(4px);
+}
+
+/* =================================
+   SECONDARY BUTTON
+================================= */
+
+.cars-hero-scroll-button {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  border-radius: 10px;
+
+  color: #ffffff;
+
+  background: rgba(255, 255, 255, 0.06);
+
+  cursor: pointer;
+
+  backdrop-filter: blur(10px);
+
+  -webkit-backdrop-filter: blur(10px);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.cars-hero-scroll-button svg {
+  width: 19px;
+  height: 19px;
+}
+
+.cars-hero-scroll-button:hover {
+  transform: translateY(-3px);
+
+  border-color: rgba(165, 109, 221, 0.7);
+
+  background: rgba(165, 109, 221, 0.15);
+}
+
+/* =================================
+   STATS
+================================= */
+
+.cars-hero-stats {
+  margin-top: 50px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 22px;
+}
+
+.cars-hero-stat-item {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.cars-hero-stat-item strong {
+  color: #ffffff;
+
+  font-size: 1.15rem;
+
+  font-weight: 800;
+}
+
+.cars-hero-stat-item span {
+  color: rgba(255, 255, 255, 0.45);
+
+  font-size: 0.65rem;
+}
+
+.cars-hero-stat-line {
+  width: 1px;
+
+  height: 34px;
+
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* =================================
+   VISUAL
+================================= */
+
+.cars-hero-visual {
+  position: relative;
+
+  min-height: 570px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  opacity: 0;
+
+  transform: translateX(110px);
+
+  transition:
+    opacity 1s ease 0.15s,
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
+}
+
+.cars-hero-active .cars-hero-visual {
+  opacity: 1;
+
+  transform: translateX(0);
+}
+
+/* =================================
+   IMAGE CONTAINER
+================================= */
+
+.cars-hero-image-container {
+  position: relative;
+
+  z-index: 3;
+
+  width: min(100%, 720px);
+
+  overflow: hidden;
+
+  border-radius: 32px;
+
+  transform: rotate(-2deg);
+
+  background: #17121e;
+
+  box-shadow:
+    0 40px 100px rgba(0, 0, 0, 0.5);
+
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+.cars-hero-image-container::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(60, 0, 157, 0.35),
+      transparent 45%
+    );
+
+  pointer-events: none;
+}
+
+.cars-hero-image-container:hover {
+  transform:
+    rotate(0deg)
+    translateY(-7px);
+
+  box-shadow:
+    0 50px 110px rgba(0, 0, 0, 0.6);
+}
+
+/* =================================
+   IMAGE
+================================= */
+
+.cars-hero-car-image {
+  width: 100%;
+
+  height: 520px;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.8s ease;
+}
+
+.cars-hero-image-container:hover
+.cars-hero-car-image {
+  transform: scale(1.05);
+}
+
+/* =================================
+   IMAGE GLOW
+================================= */
+
+.cars-hero-image-glow {
+  position: absolute;
+
+  width: 70%;
+
+  height: 70%;
+
+  top: 15%;
+
+  left: 15%;
+
+  border-radius: 50%;
+
+  background:
+    rgba(102, 39, 172, 0.25);
+
+  filter: blur(80px);
+
+  pointer-events: none;
+}
+
+/* =================================
+   FLOATING CARD
+================================= */
+
+.cars-hero-info-card {
+  position: absolute;
+
+  right: -5px;
+
+  bottom: 40px;
+
+  z-index: 6;
+
+  width: 220px;
+
+  padding: 21px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 18px;
+
+  background:
+    rgba(22, 12, 32, 0.88);
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.4);
+
+  backdrop-filter: blur(16px);
+
+  -webkit-backdrop-filter: blur(16px);
+
+  animation:
+    carsHeroFloating 4s ease-in-out infinite;
+}
+
+.cars-hero-info-card > span {
+  margin-bottom: 9px;
+
+  color: #b992dc;
+
+  font-size: 0.6rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+.cars-hero-info-card strong {
+  color: #ffffff;
+
+  font-size: 1rem;
+
+  line-height: 1.4;
+}
+
+.cars-hero-info-line {
+  width: 32px;
+
+  height: 2px;
+
+  margin-top: 15px;
+
+  background: #a56ddd;
+}
+
+/* =================================
+   DECORATIVE RING
+================================= */
+
+.cars-hero-ring {
+  position: absolute;
+
+  top: 15px;
+
+  right: 10px;
+
+  width: 190px;
+
+  height: 190px;
+
+  border:
+    1px solid rgba(165, 109, 221, 0.2);
+
+  border-radius: 50%;
+}
+
+.cars-hero-ring::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 20px;
+
+  border:
+    1px dashed rgba(165, 109, 221, 0.18);
+
+  border-radius: 50%;
+}
+
+/* =================================
+   SCROLL INDICATOR
+================================= */
+
+.cars-hero-scroll-indicator {
+  position: absolute;
+
+  left: 5%;
+
+  bottom: 30px;
+
+  z-index: 5;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  color: rgba(255, 255, 255, 0.45);
+
+  font-size: 0.62rem;
+
+  letter-spacing: 0.06em;
+
+  text-transform: uppercase;
+}
+
+.cars-hero-scroll-track {
+  position: relative;
+
+  width: 45px;
+
+  height: 1px;
+
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.cars-hero-scroll-track span {
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  width: 17px;
+
+  height: 1px;
+
+  background: #a56ddd;
+
+  animation:
+    carsHeroScroll 2s ease-in-out infinite;
+}
+
+/* =================================
+   ANIMATIONS
+================================= */
+
+@keyframes carsHeroFloating {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+@keyframes carsHeroScroll {
+  0% {
+    transform: translateX(-20px);
+  }
+
+  50% {
+    transform: translateX(45px);
+  }
+
+  100% {
+    transform: translateX(-20px);
+  }
+}
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 1000px) {
+  .cars-hero-section {
+    min-height: auto;
+
+    padding-top: 130px;
+
+    padding-bottom: 100px;
+  }
+
+  .cars-hero-container {
+    grid-template-columns: 1fr;
+
+    gap: 70px;
+  }
+
+  .cars-hero-content {
+    max-width: 760px;
+  }
+
+  .cars-hero-visual {
+    min-height: 510px;
+  }
+
+  .cars-hero-image-container {
+    width: min(100%, 730px);
+  }
+}
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 650px) {
+  .cars-hero-section {
+    padding: 110px 20px 80px;
+  }
+
+  .cars-hero-container {
+    gap: 50px;
+  }
+
+  .cars-hero-title {
+    font-size: clamp(
+      2.8rem,
+      13vw,
+      4rem
+    );
+  }
+
+  .cars-hero-description {
+    font-size: 0.9rem;
+
+    line-height: 1.75;
+  }
+
+  .cars-hero-stats {
+    gap: 13px;
+  }
+
+  .cars-hero-stat-item strong {
+    font-size: 1rem;
+  }
+
+  .cars-hero-stat-item span {
+    font-size: 0.58rem;
+  }
+
+  .cars-hero-stat-line {
+    height: 30px;
+  }
+
+  .cars-hero-visual {
+    min-height: 390px;
+  }
+
+  .cars-hero-image-container {
+    width: 95%;
+
+    border-radius: 25px;
+  }
+
+  .cars-hero-car-image {
+    height: 350px;
+  }
+
+  .cars-hero-info-card {
+    right: 0;
+
+    bottom: 15px;
+
+    width: 175px;
+
+    padding: 16px;
+  }
+
+  .cars-hero-info-card strong {
+    font-size: 0.85rem;
+  }
+
+  .cars-hero-ring {
+    width: 110px;
+
+    height: 110px;
+
+    top: 0;
+
+    right: 0;
+  }
+
+  .cars-hero-ring::before {
+    inset: 13px;
+  }
+
+  .cars-hero-scroll-indicator {
+    display: none;
+  }
+}
+
+/* =================================
+   SMALL MOBILE
+================================= */
+
+@media (max-width: 400px) {
+  .cars-hero-section {
+    padding-right: 16px;
+
+    padding-left: 16px;
+  }
+
+  .cars-hero-actions {
+    width: 100%;
+  }
+
+  .cars-hero-primary-button {
+    flex: 1;
+  }
+
+  .cars-hero-scroll-button {
+    flex-shrink: 0;
+  }
+
+  .cars-hero-car-image {
+    height: 300px;
+  }
+
+  .cars-hero-info-card {
+    width: 155px;
+  }
+}
+
+/* =================================
+   REDUCED MOTION
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .cars-hero-content,
+  .cars-hero-visual {
+    opacity: 1;
+
+    transform: none;
+
+    transition: none;
+  }
+
+  .cars-hero-info-card,
+  .cars-hero-scroll-track span {
+    animation: none;
+  }
+
+  .cars-hero-image-container,
+  .cars-hero-car-image,
+  .cars-hero-primary-button,
+  .cars-hero-scroll-button {
+    transition: none;
+  }
+}

@@ -1,0 +1,597 @@
+/* =================================
+   VEHICLE BENEFITS SECTION
+================================= */
+
+.vehicle-benefits-section {
+  position: relative;
+
+  width: 100%;
+
+  padding: 95px 5%;
+
+  overflow: hidden;
+
+  background: #ffffff;
+}
+
+.vehicle-benefits-container {
+  width: 100%;
+
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.85fr)
+    minmax(0, 1.15fr);
+
+  align-items: start;
+
+  gap: 75px;
+}
+
+/* =================================
+   INTRO
+================================= */
+
+.vehicle-benefits-intro {
+  opacity: 0;
+
+  transform: translateX(-70px);
+
+  transition:
+    opacity 0.85s ease,
+    transform 0.85s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      );
+}
+
+.vehicle-benefits-visible
+.vehicle-benefits-intro {
+  opacity: 1;
+
+  transform: translateX(0);
+}
+
+/* =================================
+   EYEBROW
+================================= */
+
+.vehicle-benefits-eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 14px;
+
+  color: #3c009d;
+
+  font-size: 0.63rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+}
+
+.vehicle-benefits-eyebrow::before {
+  content: "";
+
+  width: 26px;
+
+  height: 2px;
+
+  background: #3c009d;
+}
+
+/* =================================
+   HEADING
+================================= */
+
+.vehicle-benefits-intro h2 {
+  max-width: 500px;
+
+  margin: 0;
+
+  color: #171717;
+
+  font-size: clamp(
+    2.5rem,
+    4.5vw,
+    4rem
+  );
+
+  font-weight: 850;
+
+  line-height: 0.98;
+
+  letter-spacing: -0.06em;
+}
+
+.vehicle-benefits-intro h2 span {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #3c009d;
+}
+
+/* =================================
+   DESCRIPTION
+================================= */
+
+.vehicle-benefits-intro > p {
+  max-width: 485px;
+
+  margin: 21px 0 0;
+
+  color: #77737a;
+
+  font-size: 0.82rem;
+
+  line-height: 1.8;
+}
+
+/* =================================
+   STATISTIC
+================================= */
+
+.vehicle-benefits-stat {
+  display: grid;
+
+  grid-template-columns:
+    auto
+    1px
+    1fr;
+
+  align-items: center;
+
+  gap: 17px;
+
+  max-width: 480px;
+
+  margin-top: 42px;
+
+  padding-top: 23px;
+
+  border-top: 1px solid #e9e5ec;
+}
+
+.vehicle-benefits-stat-number {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.vehicle-benefits-stat-number strong {
+  color: #171717;
+
+  font-size: 1.65rem;
+
+  font-weight: 850;
+
+  line-height: 1;
+
+  letter-spacing: -0.05em;
+}
+
+.vehicle-benefits-stat-number span {
+  margin-top: 5px;
+
+  color: #99949d;
+
+  font-size: 0.52rem;
+
+  font-weight: 750;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+.vehicle-benefits-stat-divider {
+  width: 1px;
+
+  height: 40px;
+
+  background: #ddd8e1;
+}
+
+.vehicle-benefits-stat p {
+  margin: 0;
+
+  color: #858087;
+
+  font-size: 0.61rem;
+
+  line-height: 1.6;
+}
+
+/* =================================
+   BENEFIT LIST
+================================= */
+
+.vehicle-benefits-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+/* =================================
+   BENEFIT CARD
+================================= */
+
+.vehicle-benefit-card {
+  min-height: 125px;
+
+  display: grid;
+
+  grid-template-columns:
+    34px
+    50px
+    minmax(0, 1fr)
+    38px;
+
+  align-items: center;
+
+  gap: 17px;
+
+  padding: 21px;
+
+  border: 1px solid #e9e5ec;
+
+  border-radius: 15px;
+
+  background: #faf9fb;
+
+  opacity: 0;
+
+  transform: translateX(65px);
+
+  transition:
+    opacity 0.75s ease
+      var(--vehicle-benefit-delay),
+    transform 0.75s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      )
+      var(--vehicle-benefit-delay),
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.vehicle-benefits-visible
+.vehicle-benefit-card {
+  opacity: 1;
+
+  transform: translateX(0);
+}
+
+/* =================================
+   CARD HOVER
+================================= */
+
+.vehicle-benefit-card:hover {
+  border-color: #d7c9e3;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 15px 35px
+    rgba(35, 15, 50, 0.08);
+}
+
+/* =================================
+   NUMBER
+================================= */
+
+.vehicle-benefit-number {
+  align-self: start;
+
+  padding-top: 2px;
+
+  color: #aaa5ad;
+
+  font-size: 0.57rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+}
+
+/* =================================
+   ICON
+================================= */
+
+.vehicle-benefit-icon {
+  width: 50px;
+
+  height: 50px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid #e3d9ea;
+
+  border-radius: 13px;
+
+  color: #3c009d;
+
+  background: #f3eef8;
+
+  transition:
+    color 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.vehicle-benefit-icon svg {
+  width: 20px;
+
+  height: 20px;
+}
+
+.vehicle-benefit-card:hover
+.vehicle-benefit-icon {
+  color: #ffffff;
+
+  background: #3c009d;
+
+  transform:
+    rotate(-5deg)
+    scale(1.05);
+}
+
+/* =================================
+   CONTENT
+================================= */
+
+.vehicle-benefit-content {
+  min-width: 0;
+}
+
+.vehicle-benefit-content h3 {
+  margin: 0;
+
+  color: #1b1a1c;
+
+  font-size: 0.9rem;
+
+  font-weight: 800;
+
+  letter-spacing: -0.02em;
+}
+
+.vehicle-benefit-content p {
+  max-width: 480px;
+
+  margin: 7px 0 0;
+
+  color: #807b83;
+
+  font-size: 0.63rem;
+
+  line-height: 1.65;
+}
+
+/* =================================
+   ARROW
+================================= */
+
+.vehicle-benefit-arrow {
+  width: 36px;
+
+  height: 36px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid #e1dce5;
+
+  border-radius: 50%;
+
+  color: #8f8992;
+
+  background: #ffffff;
+
+  transition:
+    color 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.vehicle-benefit-arrow svg {
+  width: 14px;
+
+  height: 14px;
+}
+
+.vehicle-benefit-card:hover
+.vehicle-benefit-arrow {
+  color: #ffffff;
+
+  border-color: #3c009d;
+
+  background: #3c009d;
+
+  transform:
+    translate(2px, -2px);
+}
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 900px) {
+  .vehicle-benefits-section {
+    padding: 80px 5%;
+  }
+
+  .vehicle-benefits-container {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+  .vehicle-benefits-intro {
+    max-width: 700px;
+  }
+
+  .vehicle-benefits-intro > p {
+    max-width: 620px;
+  }
+}
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+  .vehicle-benefits-section {
+    padding: 70px 20px;
+  }
+
+  .vehicle-benefits-container {
+    gap: 38px;
+  }
+
+  .vehicle-benefits-intro h2 {
+    font-size: 2.5rem;
+  }
+
+  .vehicle-benefits-intro > p {
+    font-size: 0.75rem;
+
+    line-height: 1.75;
+  }
+
+  .vehicle-benefits-stat {
+    gap: 13px;
+
+    margin-top: 30px;
+  }
+
+  .vehicle-benefit-card {
+    min-height: 115px;
+
+    grid-template-columns:
+      27px
+      44px
+      minmax(0, 1fr);
+
+    gap: 11px;
+
+    padding: 16px;
+  }
+
+  .vehicle-benefit-icon {
+    width: 44px;
+
+    height: 44px;
+
+    border-radius: 11px;
+  }
+
+  .vehicle-benefit-icon svg {
+    width: 18px;
+
+    height: 18px;
+  }
+
+  .vehicle-benefit-content h3 {
+    font-size: 0.82rem;
+  }
+
+  .vehicle-benefit-content p {
+    font-size: 0.59rem;
+
+    line-height: 1.55;
+  }
+
+  .vehicle-benefit-arrow {
+    display: none;
+  }
+}
+
+/* =================================
+   SMALL MOBILE
+================================= */
+
+@media (max-width: 400px) {
+  .vehicle-benefits-section {
+    padding-right: 16px;
+
+    padding-left: 16px;
+  }
+
+  .vehicle-benefits-intro h2 {
+    font-size: 2.25rem;
+  }
+
+  .vehicle-benefit-card {
+    grid-template-columns:
+      24px
+      41px
+      minmax(0, 1fr);
+
+    gap: 9px;
+
+    padding: 14px;
+  }
+
+  .vehicle-benefit-icon {
+    width: 41px;
+
+    height: 41px;
+  }
+
+  .vehicle-benefit-content h3 {
+    font-size: 0.78rem;
+  }
+
+  .vehicle-benefit-content p {
+    font-size: 0.55rem;
+  }
+}
+
+/* =================================
+   REDUCED MOTION
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .vehicle-benefits-intro,
+  .vehicle-benefit-card {
+    opacity: 1;
+
+    transform: none;
+
+    transition: none;
+  }
+
+  .vehicle-benefit-icon,
+  .vehicle-benefit-arrow {
+    transition: none;
+  }
+}

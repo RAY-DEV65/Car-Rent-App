@@ -1,0 +1,457 @@
+.about-story-section {
+  position: relative;
+  padding: 120px 5%;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.about-story-container {
+  max-width: 1250px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  align-items: center;
+  gap: 90px;
+}
+
+/* --------------------------------
+   Visual
+--------------------------------- */
+
+.about-story-visual {
+  position: relative;
+  min-height: 590px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-story-image-frame {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 500px);
+  aspect-ratio: 0.82;
+  overflow: hidden;
+  border-radius: 30px;
+  transform: rotate(-2deg);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.14);
+}
+
+.about-story-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.about-story-image-frame:hover .about-story-image {
+  transform: scale(1.06);
+}
+
+/* --------------------------------
+   Decorative number
+--------------------------------- */
+
+.about-story-number {
+  position: absolute;
+  top: 25px;
+  left: 5px;
+  z-index: 3;
+  width: 75px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(60, 0, 157, 0.15);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.about-story-number span {
+  color: #3c009d;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+/* --------------------------------
+   Experience card
+--------------------------------- */
+
+.about-story-experience {
+  position: absolute;
+  right: 0;
+  bottom: 55px;
+  z-index: 4;
+  min-width: 205px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.13);
+  animation: aboutStoryFloat 4s ease-in-out infinite;
+}
+
+.about-story-experience-number {
+  color: #3c009d;
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.about-story-experience-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.about-story-experience-text strong {
+  color: #1c1c1c;
+  font-size: 0.9rem;
+}
+
+.about-story-experience-text span {
+  color: #777777;
+  font-size: 0.72rem;
+}
+
+/* --------------------------------
+   Decorative circle
+--------------------------------- */
+
+.about-story-decoration {
+  position: absolute;
+  right: -25px;
+  top: 25px;
+  width: 180px;
+  height: 180px;
+  border: 1px dashed rgba(60, 0, 157, 0.2);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.about-story-decoration::before {
+  content: "";
+  position: absolute;
+  inset: 20px;
+  border-radius: 50%;
+  background: rgba(60, 0, 157, 0.04);
+}
+
+/* --------------------------------
+   Content
+--------------------------------- */
+
+.about-story-content {
+  max-width: 600px;
+  animation: aboutStoryContentReveal 0.9s ease both;
+}
+
+.about-story-label {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  color: #3c009d;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.about-story-label::before {
+  content: "";
+  width: 28px;
+  height: 2px;
+  background: #3c009d;
+}
+
+.about-story-title {
+  margin: 0;
+  color: #171717;
+  font-size: clamp(2.3rem, 4vw, 4rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.about-story-title span {
+  display: block;
+  color: #3c009d;
+}
+
+.about-story-description {
+  margin: 25px 0 0;
+  color: #666666;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* --------------------------------
+   Values
+--------------------------------- */
+
+.about-story-values {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.about-story-value {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.about-story-value-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #ffffff;
+  background: #3c009d;
+}
+
+.about-story-value-icon svg {
+  width: 13px;
+  height: 13px;
+}
+
+.about-story-value div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.about-story-value strong {
+  color: #222222;
+  font-size: 0.88rem;
+}
+
+.about-story-value div span {
+  color: #777777;
+  font-size: 0.76rem;
+  line-height: 1.5;
+}
+
+/* --------------------------------
+   Story link
+--------------------------------- */
+
+.about-story-link {
+  margin-top: 34px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  border: none;
+  color: #222222;
+  background: transparent;
+  font: inherit;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.about-story-link-icon {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #ffffff;
+  background: #3c009d;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.about-story-link:hover .about-story-link-icon {
+  transform: rotate(45deg);
+  background: #2d0077;
+}
+
+/* --------------------------------
+   Animations
+--------------------------------- */
+
+@keyframes aboutStoryContentReveal {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes aboutStoryFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* --------------------------------
+   Tablet
+--------------------------------- */
+
+@media (max-width: 950px) {
+  .about-story-section {
+    padding: 100px 5%;
+  }
+
+  .about-story-container {
+    grid-template-columns: 1fr;
+    gap: 70px;
+  }
+
+  .about-story-content {
+    max-width: 700px;
+  }
+
+  .about-story-visual {
+    min-height: 550px;
+  }
+
+  .about-story-image-frame {
+    width: min(90%, 520px);
+  }
+
+  .about-story-experience {
+    right: 3%;
+  }
+}
+
+/* --------------------------------
+   Mobile
+--------------------------------- */
+
+@media (max-width: 600px) {
+  .about-story-section {
+    padding: 80px 20px;
+  }
+
+  .about-story-container {
+    gap: 55px;
+  }
+
+  .about-story-visual {
+    min-height: 430px;
+  }
+
+  .about-story-image-frame {
+    width: 88%;
+    border-radius: 24px;
+  }
+
+  .about-story-number {
+    top: 15px;
+    left: 0;
+    width: 60px;
+    height: 60px;
+  }
+
+  .about-story-number span {
+    font-size: 0.85rem;
+  }
+
+  .about-story-experience {
+    right: 0;
+    bottom: 30px;
+    min-width: 175px;
+    padding: 15px;
+  }
+
+  .about-story-experience-number {
+    font-size: 1.6rem;
+  }
+
+  .about-story-experience-text strong {
+    font-size: 0.8rem;
+  }
+
+  .about-story-experience-text span {
+    font-size: 0.65rem;
+  }
+
+  .about-story-decoration {
+    right: -10px;
+    top: 10px;
+    width: 120px;
+    height: 120px;
+  }
+
+  .about-story-decoration::before {
+    inset: 14px;
+  }
+
+  .about-story-title {
+    font-size: clamp(2.2rem, 11vw, 3.2rem);
+  }
+
+  .about-story-description {
+    font-size: 0.92rem;
+    line-height: 1.75;
+  }
+
+  .about-story-values {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
+/* --------------------------------
+   Small mobile
+--------------------------------- */
+
+@media (max-width: 400px) {
+  .about-story-section {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .about-story-visual {
+    min-height: 390px;
+  }
+
+  .about-story-experience {
+    right: -5px;
+  }
+}
+
+/* --------------------------------
+   Reduced motion accessibility
+--------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .about-story-content,
+  .about-story-experience {
+    animation: none;
+  }
+
+  .about-story-image,
+  .about-story-link-icon {
+    transition: none;
+  }
+}

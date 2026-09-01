@@ -1,0 +1,567 @@
+.about-cta-section {
+  position: relative;
+  padding: 120px 5%;
+  overflow: hidden;
+  background: #3c009d;
+  isolation: isolate;
+}
+
+.about-cta-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1250px;
+  min-height: 500px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.7fr);
+  align-items: center;
+  gap: 70px;
+}
+
+/* =================================
+   BACKGROUND GLOW
+================================= */
+
+.about-cta-glow {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(100px);
+  z-index: -1;
+}
+
+.about-cta-glow-left {
+  top: -250px;
+  left: -200px;
+  background: rgba(255, 255, 255, 0.13);
+}
+
+.about-cta-glow-right {
+  right: -220px;
+  bottom: -250px;
+  background: rgba(20, 0, 70, 0.35);
+}
+
+/* =================================
+   CONTENT
+================================= */
+
+.about-cta-content {
+  max-width: 680px;
+
+  opacity: 0;
+  transform: translateX(-90px);
+
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.about-cta-content.about-cta-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* =================================
+   LABEL
+================================= */
+
+.about-cta-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+
+  margin-bottom: 20px;
+
+  color: #dfccff;
+
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.about-cta-label::before {
+  content: "";
+
+  width: 30px;
+  height: 2px;
+
+  background: #dfccff;
+}
+
+/* =================================
+   TITLE
+================================= */
+
+.about-cta-title {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 800;
+  line-height: 0.98;
+
+  letter-spacing: -0.055em;
+}
+
+.about-cta-title span {
+  display: block;
+  color: #d4b8ff;
+}
+
+/* =================================
+   DESCRIPTION
+================================= */
+
+.about-cta-description {
+  max-width: 570px;
+
+  margin: 28px 0 0;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-size: 0.98rem;
+  line-height: 1.8;
+}
+
+/* =================================
+   BUTTONS
+================================= */
+
+.about-cta-actions {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  margin-top: 35px;
+}
+
+.about-cta-primary,
+.about-cta-secondary {
+  min-height: 50px;
+
+  padding: 0 22px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  border-radius: 10px;
+
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.about-cta-primary {
+  border: 1px solid #ffffff;
+
+  color: #3c009d;
+  background: #ffffff;
+}
+
+.about-cta-primary svg {
+  width: 17px;
+  height: 17px;
+
+  transition: transform 0.3s ease;
+}
+
+.about-cta-primary:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+.about-cta-primary:hover svg {
+  transform: translateX(4px);
+}
+
+.about-cta-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.about-cta-secondary:hover {
+  transform: translateY(-3px);
+
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* =================================
+   TRUST POINTS
+================================= */
+
+.about-cta-trust {
+  margin-top: 30px;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.about-cta-trust span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  color: rgba(255, 255, 255, 0.68);
+
+  font-size: 0.72rem;
+}
+
+.about-cta-trust svg {
+  width: 15px;
+  height: 15px;
+
+  color: #d4b8ff;
+}
+
+/* =================================
+   RIGHT VISUAL
+================================= */
+
+.about-cta-visual {
+  position: relative;
+
+  width: 390px;
+  height: 390px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  transform: translateX(100px) scale(0.9);
+
+  transition:
+    opacity 1s ease 0.15s,
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
+}
+
+.about-cta-visual.about-cta-visible {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+/* =================================
+   RINGS
+================================= */
+
+.about-cta-ring {
+  position: absolute;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  border-radius: 50%;
+}
+
+.about-cta-ring-one {
+  width: 320px;
+  height: 320px;
+
+  animation: aboutCtaRotate 20s linear infinite;
+}
+
+.about-cta-ring-two {
+  width: 240px;
+  height: 240px;
+
+  border-style: dashed;
+
+  animation: aboutCtaRotateReverse 15s linear infinite;
+}
+
+/* =================================
+   ORBIT
+================================= */
+
+.about-cta-orbit {
+  position: absolute;
+
+  width: 320px;
+  height: 320px;
+
+  border-radius: 50%;
+}
+
+.about-cta-orbit span {
+  position: absolute;
+
+  top: -4px;
+  left: 50%;
+
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+/* =================================
+   BADGE
+================================= */
+
+.about-cta-badge {
+  position: relative;
+  z-index: 3;
+
+  width: 170px;
+  height: 170px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  border-radius: 50%;
+
+  color: #ffffff;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 25px 60px rgba(20, 0, 70, 0.25);
+
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  animation: aboutCtaFloat 4s ease-in-out infinite;
+}
+
+.about-cta-badge strong {
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.about-cta-badge span {
+  margin-top: 4px;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: 0.7rem;
+}
+
+/* =================================
+   ANIMATIONS
+================================= */
+
+@keyframes aboutCtaFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes aboutCtaRotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes aboutCtaRotateReverse {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 1000px) {
+  .about-cta-section {
+    padding: 100px 5%;
+  }
+
+  .about-cta-container {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .about-cta-content {
+    max-width: 700px;
+  }
+
+  .about-cta-visual {
+    width: 330px;
+    height: 330px;
+  }
+
+  .about-cta-ring-one {
+    width: 280px;
+    height: 280px;
+  }
+
+  .about-cta-ring-two {
+    width: 210px;
+    height: 210px;
+  }
+
+  .about-cta-orbit {
+    width: 280px;
+    height: 280px;
+  }
+}
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 650px) {
+  .about-cta-section {
+    padding: 85px 20px;
+  }
+
+  .about-cta-container {
+    min-height: auto;
+    gap: 55px;
+  }
+
+  .about-cta-title {
+    font-size: clamp(2.8rem, 13vw, 4rem);
+  }
+
+  .about-cta-description {
+    font-size: 0.92rem;
+    line-height: 1.75;
+  }
+
+  .about-cta-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .about-cta-primary,
+  .about-cta-secondary {
+    width: 100%;
+  }
+
+  .about-cta-trust {
+    gap: 12px;
+  }
+
+  .about-cta-visual {
+    width: 290px;
+    height: 290px;
+  }
+
+  .about-cta-ring-one {
+    width: 250px;
+    height: 250px;
+  }
+
+  .about-cta-ring-two {
+    width: 190px;
+    height: 190px;
+  }
+
+  .about-cta-orbit {
+    width: 250px;
+    height: 250px;
+  }
+
+  .about-cta-badge {
+    width: 145px;
+    height: 145px;
+  }
+}
+
+/* =================================
+   SMALL MOBILE
+================================= */
+
+@media (max-width: 400px) {
+  .about-cta-section {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .about-cta-visual {
+    width: 260px;
+    height: 260px;
+  }
+
+  .about-cta-ring-one {
+    width: 225px;
+    height: 225px;
+  }
+
+  .about-cta-ring-two {
+    width: 170px;
+    height: 170px;
+  }
+
+  .about-cta-orbit {
+    width: 225px;
+    height: 225px;
+  }
+
+  .about-cta-badge {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+/* =================================
+   REDUCED MOTION
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .about-cta-content,
+  .about-cta-visual {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .about-cta-ring-one,
+  .about-cta-ring-two,
+  .about-cta-badge {
+    animation: none;
+  }
+
+  .about-cta-primary,
+  .about-cta-secondary {
+    transition: none;
+  }
+}
