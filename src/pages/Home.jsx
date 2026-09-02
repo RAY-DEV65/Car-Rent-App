@@ -8,7 +8,6 @@ import HowItWorks from "../components/how-it-work/HowItWorks";
 import PopularVehicles from "../components/popular-vehicles/PopularVehicles";
 import Search from "../components/search/search";
 import SectionHeading from "../components/section-heading/SectionHeading";
-import StatsSection from "../components/stats-section/StatsSection";
 import WhyChooseUs from "../components/why-choose-us/WhyChooseUs";
 
 const Home = () => {
@@ -35,7 +34,7 @@ const Home = () => {
         subtitle="Renting a car has never been easier"
       />
       <HowItWorks />
-      <StatsSection />
+      
       <SectionHeading
         title="What Our"
         highlight="Customers Say"
