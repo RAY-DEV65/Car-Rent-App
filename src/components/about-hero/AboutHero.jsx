@@ -1,6 +1,7 @@
 import { FiArrowRight, FiCheck } from "react-icons/fi";
 import "./AboutHero.css";
 import aboutCar from "../../assets/hero5.jpeg";
+import { Link } from "react-router-dom";
 
 const AboutHero = () => {
   const scrollToSection = (sectionId) => {
@@ -39,10 +40,10 @@ const AboutHero = () => {
           </p>
 
           <div className="about-hero-actions">
-            <button className="about-hero-primary-btn">
+            <Link to="/car#vehicle-categories" className="about-hero-primary-btn">
               Explore Our Cars
               <FiArrowRight />
-            </button>
+            </Link>
 
             <button
               type="button"

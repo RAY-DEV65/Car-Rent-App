@@ -8,6 +8,18 @@ import {
 
 import car7 from "../../assets/car7.jpeg";
 import car8 from "../../assets/car8.jpeg";
+import blog2 from "../../assets/blog2.jpeg";
+import blog3 from "../../assets/blog3.jpeg";
+import blog4 from "../../assets/blog4.jpeg";
+import blog5 from "../../assets/blog5.jpeg";
+import blog6 from "../../assets/blog6.jpeg";
+import blog7 from "../../assets/blog7.jpeg";
+import blog8 from "../../assets/blog8.jpeg";
+import blog9 from "../../assets/blog9.jpeg";
+import blog10 from "../../assets/blog10.jpeg";
+import blog11 from "../../assets/blog11.jpeg";
+import blog12 from "../../assets/blog12.jpeg";
+import blog13 from "../../assets/blog13.jpeg";
 
 import "./BlogArticle.css";
 
@@ -34,7 +46,7 @@ const BlogArticles = ({
       title:
         "How to choose the right rental car for your trip",
       category: "Car Tips",
-      image: car7,
+      image: blog2,
       date: "September 1, 2026",
       readTime: "5 min read",
       excerpt:
@@ -57,7 +69,7 @@ The best rental car is not always the most expensive one. It is the vehicle that
       title:
         "Planning a comfortable city-to-city journey",
       category: "Travel",
-      image: car8,
+      image: blog3,
       date: "August 28, 2026",
       readTime: "5 min read",
       excerpt:
@@ -78,7 +90,7 @@ Comfortable travel is usually the result of simple preparation rather than compl
       title:
         "Why regular car maintenance matters",
       category: "Maintenance",
-      image: car7,
+      image: blog4,
       date: "August 24, 2026",
       readTime: "6 min read",
       excerpt:
@@ -99,7 +111,7 @@ Whether you own a car or rent one regularly, understanding basic maintenance hel
       title:
         "5 things to check before starting a road trip",
       category: "Driving",
-      image: car8,
+      image: blog5,
       date: "August 20, 2026",
       readTime: "4 min read",
       excerpt:
@@ -120,7 +132,7 @@ A little preparation can make a long drive more comfortable and reduce unnecessa
       title:
         "How to get better value from your car rental",
       category: "Car Tips",
-      image: car8,
+      image: blog6,
       date: "August 17, 2026",
       readTime: "4 min read",
       excerpt:
@@ -141,7 +153,7 @@ Always consider the whole trip rather than looking at the daily price alone.
       title:
         "Keeping your rental car clean during your trip",
       category: "Maintenance",
-      image: car7,
+      image: blog7,
       date: "August 13, 2026",
       readTime: "3 min read",
       excerpt:
@@ -162,7 +174,7 @@ Treating a rental car carefully is part of being a responsible renter and helps 
       title:
         "The best way to prepare for a weekend getaway",
       category: "Travel",
-      image: car8,
+      image: blog8,
       date: "August 10, 2026",
       readTime: "5 min read",
       excerpt:
@@ -183,7 +195,7 @@ With the right preparation, even a short weekend trip can feel refreshing and me
       title:
         "What makes an SUV a good family rental?",
       category: "Driving",
-      image: car7,
+      image: blog9,
       date: "August 7, 2026",
       readTime: "4 min read",
       excerpt:
@@ -204,7 +216,7 @@ The right SUV should give your family enough room without adding unnecessary cos
       title:
         "Understanding the warning lights on your dashboard",
       category: "News",
-      image: car8,
+      image: blog10,
       date: "August 3, 2026",
       readTime: "6 min read",
       excerpt:
@@ -225,7 +237,7 @@ Understanding the basics can help you react appropriately instead of guessing wh
       title:
         "Simple habits that make long drives easier",
       category: "Driving",
-      image: car7,
+      image: blog11,
       date: "July 30, 2026",
       readTime: "4 min read",
       excerpt:
@@ -246,7 +258,7 @@ Small habits can make a significant difference over several hours behind the whe
       title:
         "When should you choose a luxury rental?",
       category: "Car Tips",
-      image: car8,
+      image: blog13,
       date: "July 26, 2026",
       readTime: "5 min read",
       excerpt:
@@ -267,7 +279,7 @@ The goal should always be to choose a vehicle that improves the experience rathe
       title:
         "Road trip essentials every driver should carry",
       category: "News",
-      image: car7,
+      image: blog12,
       date: "July 22, 2026",
       readTime: "4 min read",
       excerpt:

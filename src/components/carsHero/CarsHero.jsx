@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { FiArrowRight, FiChevronDown } from "react-icons/fi";
-import image9 from "../../assets/image9.jpeg";
+import image9 from "../../assets/view.jpeg";
 import "./CarsHero.css";
 
 const CarsHero = () => {
@@ -31,7 +31,7 @@ const CarsHero = () => {
   }, []);
 
   const scrollToVehicles = () => {
-    const section = document.getElementById("cars-collection");
+    const section = document.getElementById("vehicle-categories");
 
     if (section) {
       section.scrollIntoView({

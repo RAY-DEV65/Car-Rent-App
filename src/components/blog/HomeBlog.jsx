@@ -4,6 +4,7 @@ import car from "../../assets/car.jpeg";
 import blog1 from "../../assets/blog1.jpeg";
 import background from "../../assets/background.jpeg";
 import { FaChevronCircleRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const blogs = [
   {
@@ -94,13 +95,13 @@ const Blog = () => {
       </div>
 
       <div className="all-blogs">
-        <button className="view-all-blog">
+        <Link to="/blog#blog-articles" className="view-all-blog">
           View All Blogs
           <span>
             {" "}
             <FaChevronCircleRight />{" "}
           </span>
-        </button>
+        </Link>
       </div>
     </div>
   );

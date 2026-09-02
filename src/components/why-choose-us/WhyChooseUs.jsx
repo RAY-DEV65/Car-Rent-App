@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import "./WhyChooseUs.css";
 import Jeep from "../../assets/jeep.png";
+import { Link } from "react-router-dom";
 
 const WhyChooseUs = () => {
   const [show, setShow] = useState(false);
@@ -61,8 +62,12 @@ const WhyChooseUs = () => {
         </div>
 
         <div className="why-buttons">
-          <button className="primary-btn">Explore Cars</button>
-          <button className="secondary-btn">Learn More</button>
+          <Link to="/car#vehicle-categories" className="primary-btn">
+            Explore Cars
+          </Link>
+          <Link to="/about" className="secondary-btn">
+            Learn More
+          </Link>
         </div>
       </div>
 

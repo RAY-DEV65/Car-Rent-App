@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import { Link } from "react-router-dom";
 import "./CarCategory.css";
 import car1 from "../../assets/car1.jpeg"
 import car2 from "../../assets/car2.jpeg"
@@ -84,9 +85,9 @@ const CarCategory = () => {
       </div>
 
       <div className="view-all-container">
-        <a  className="view-all">
+        <Link to="/car#vehicle-categories" className="view-all">
           View all vehicles <img src={arrowIcon} alt="" />
-        </a>
+        </Link>
       </div>
     </div>
   );

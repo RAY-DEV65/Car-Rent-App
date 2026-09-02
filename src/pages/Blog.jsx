@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import BlogHero from "../components/blogHero/BlogHero";
 import BlogCategories from "../components/blogCategories/BlogCategories";
@@ -13,6 +13,16 @@ const Blog = () => {
    * use the same state.
    */
   const [activeCategory, setActiveCategory] = useState("All");
+
+  useEffect(() => {
+    if (window.location.hash === "#blog-articles") {
+      setTimeout(() => {
+        document
+          .getElementById("blog-articles")
+          .scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }
+  }, []);
 
   return (
     <>

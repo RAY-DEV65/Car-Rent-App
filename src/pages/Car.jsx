@@ -1,19 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import CarsHero from "../components/carsHero/CarsHero";
 import CarSearch from "../components/carSearch/CarSearch";
 import VehicleCollection from "../components/vehicleCollection/VehicleCollection";
 import VehicleBenefits from "../components/vehicleBenefits/VehicleBenefits";
 import CarsCTA from "../components/carsCTA/CarsCTA";
+import Booking from "../components/booking/Booking";
 
 const Car = () => {
-  /*
-   * Keep the search state here so that
-   * CarSearch can send information to
-   * VehicleCollection.
-   */
-  const [searchData, setSearchData] =
-    useState({});
+  
+  const [searchData, setSearchData] = useState({});
+
+  useEffect(() => {
+    if (window.location.hash === "#vehicle-categories") {
+      setTimeout(() => {
+        document
+          .getElementById("vehicle-categories")
+          .scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 100);
+    }
+  }, []);
 
   return (
     <>
@@ -21,17 +27,15 @@ const Car = () => {
       <CarsHero />
 
       {/* Search form */}
-      <CarSearch
-        onSearch={setSearchData}
-      />
+      <CarSearch onSearch={setSearchData} />
 
       {/* Vehicle collection */}
-      <VehicleCollection
-        searchData={searchData}
-      />
+      <VehicleCollection searchData={searchData} />
 
       {/* Rental benefits */}
       <VehicleBenefits />
+
+      <Booking />
 
       {/* Final CTA */}
       <CarsCTA />
