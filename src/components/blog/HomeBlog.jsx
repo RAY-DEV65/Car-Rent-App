@@ -1,7 +1,7 @@
 import "./HomeBlog.css";
 import { useEffect, useState, useRef } from "react";
 import car from "../../assets/car.jpeg";
-import car8 from "../../assets/car8.jpeg";
+import blog1 from "../../assets/blog1.jpeg";
 import background from "../../assets/background.jpeg";
 import { FaChevronCircleRight } from "react-icons/fa";
 
@@ -22,7 +22,7 @@ const blogs = [
     date: "August 20, 2026",
     category: "Newest",
     categoryClass: "newest",
-    image: car8,
+    image: blog1,
     description:
       "Take a look at some of the newest vehicles bringing fresh technology, style and performance to the road.",
   },

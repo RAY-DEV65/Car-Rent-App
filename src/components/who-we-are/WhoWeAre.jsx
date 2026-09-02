@@ -1,6 +1,6 @@
 import { FiArrowUpRight, FiCheck } from "react-icons/fi";
 import "./WhoWeAre.css";
-import aboutStoryCar from "../../assets/car8.jpeg";
+import aboutStoryCar from "../../assets/hero2.jpeg";
 
 const WhoWeAre = () => {
   return (

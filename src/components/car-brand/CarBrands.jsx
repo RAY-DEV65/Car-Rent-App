@@ -1,16 +1,25 @@
 import "./CarBrands.css";
-import jeep from "../../assets/jeep.png";
+import toyota from "../../assets/toyota.jpeg";
+import jeep from "../../assets/jeep.png"
+import Lexus from "../../assets/Lexus.jpeg"
+import Nissan from "../../assets/Nissan.jpeg"
+import Porsche from "../../assets/Porsche.jpeg"
+import ford from "../../assets/ford.jpeg"
+import bmw from "../../assets/bmw.jpeg"
+import benz from "../../assets/benz.jpeg"
+import audi from "../../assets/audi.jpeg"
+import Chevrolet from "../../assets/Chevrolet.jpeg"
 
 const brands = [
-  { name: "Toyota", logo: jeep },
-  { name: "BMW", logo: jeep },
-  { name: "Mercedes-Benz", logo: jeep },
-  { name: "Audi", logo: jeep },
-  { name: "Lexus", logo: jeep },
-  { name: "Honda", logo: jeep },
-  { name: "Porsche", logo: jeep },
-  { name: "Ford", logo: jeep },
-  { name: "Nissan", logo: jeep },
+  { name: "Toyota", logo: toyota },
+  { name: "BMW", logo: bmw },
+  { name: "Mercedes-Benz", logo: benz },
+  { name: "Audi", logo: audi },
+  { name: "Lexus", logo: Lexus },
+  { name: "Chevrolet", logo: Chevrolet },
+  { name: "Porsche", logo: Porsche },
+  { name: "Ford", logo: ford },
+  { name: "Nissan", logo: Nissan },
 ];
 
 const CarBrands = () => {

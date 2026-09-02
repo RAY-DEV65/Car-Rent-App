@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { FiArrowRight, FiChevronDown } from "react-icons/fi";
-import car7 from "../../assets/car7.jpeg";
+import image9 from "../../assets/image9.jpeg";
 import "./CarsHero.css";
 
 const CarsHero = () => {
@@ -132,7 +132,7 @@ const CarsHero = () => {
             <div className="cars-hero-image-glow"></div>
 
             <img
-              src={car7}
+              src={image9}
               alt="Premium car available for rental"
               className="cars-hero-car-image"
             />

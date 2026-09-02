@@ -1,6 +1,6 @@
 import { FiArrowRight, FiCheck } from "react-icons/fi";
 import "./AboutHero.css";
-import aboutCar from "../../assets/car7.jpeg";
+import aboutCar from "../../assets/hero5.jpeg";
 
 const AboutHero = () => {
   const scrollToSection = (sectionId) => {

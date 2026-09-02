@@ -4,7 +4,7 @@ import {
   FiClock,
 } from "react-icons/fi";
 
-import car7 from "../../assets/car7.jpeg";
+import car7 from "../../assets/hero3.jpeg";
 
 import "./BlogHero.css";
 

@@ -43,10 +43,6 @@ const BlogNewsletter = () => {
 
   /*
    * Handle newsletter submission.
-   *
-   * For now, this changes the interface to
-   * a success message. Later, this can be
-   * connected to your backend or email service.
    */
   const handleSubmit = (event) => {
     event.preventDefault();
