@@ -5,7 +5,6 @@ import CarSearch from "../components/carSearch/CarSearch";
 import VehicleCollection from "../components/vehicleCollection/VehicleCollection";
 import VehicleBenefits from "../components/vehicleBenefits/VehicleBenefits";
 import CarsCTA from "../components/carsCTA/CarsCTA";
-import Booking from "../components/booking/Booking";
 
 const Car = () => {
   
@@ -35,7 +34,6 @@ const Car = () => {
       {/* Rental benefits */}
       <VehicleBenefits />
 
-      <Booking />
 
       {/* Final CTA */}
       <CarsCTA />

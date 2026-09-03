@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { vehicles } from "../../data";
 
 import {
   FiArrowRight,
@@ -13,337 +15,43 @@ import {
 } from "react-icons/fi";
 
 import { FaGasPump } from "react-icons/fa";
-
-import car7 from "../../assets/car7.jpeg";
-import car8 from "../../assets/car8.jpeg";
-
 import "./VehicleCollection.css";
 
 const VehicleCollection = ({ searchData = {} }) => {
   const collectionRef = useRef(null);
+  const navigate = useNavigate();
 
   const [isVisible, setIsVisible] = useState(false);
-
-  const [activeCategory, setActiveCategory] =
-    useState("All Cars");
-
-  const [currentPage, setCurrentPage] =
-    useState(1);
+  const [activeCategory, setActiveCategory] = useState("All Cars");
+  const [currentPage, setCurrentPage] = useState(1);
 
   /*
-   * Temporary vehicle database.
-   *
-   * We currently have 18 vehicles so that
-   * pagination can be tested properly.
-   */
-  const vehicles = [
-    {
-      id: 1,
-      name: "Toyota Highlander",
-      category: "SUV",
-      image: car7,
-      location: "Ibadan, Oyo",
-      price: 65000,
-      rating: 4.9,
-      reviews: 24,
-      transmission: "Automatic",
-      seats: "7 Seats",
-      fuel: "Petrol",
-      available: true,
-    },
-
-    {
-      id: 2,
-      name: "Range Rover Evoque",
-      category: "Luxury",
-      image: car8,
-      location: "Lagos, Nigeria",
-      price: 120000,
-      rating: 4.8,
-      reviews: 18,
-      transmission: "Automatic",
-      seats: "5 Seats",
-      fuel: "Petrol",
-      available: true,
-    },
-
-    {
-      id: 3,
-      name: "Toyota RAV4",
-      category: "SUV",
-      image: car7,
-      location: "Abuja, Nigeria",
-      price: 55000,
-      rating: 4.8,
-      reviews: 31,
-      transmission: "Automatic",
-      seats: "5 Seats",
-      fuel: "Petrol",
-      available: true,
-    },
-
-    {
-      id: 4,
-      name: "Toyota Corolla",
-      category: "Economy",
-      image: car8,
-      location: "Ibadan, Oyo",
-      price: 40000,
-      rating: 4.7,
-      reviews: 42,
-      transmission: "Automatic",
-      seats: "5 Seats",
-      fuel: "Petrol",
-      available: true,
-    },
-
-    {
-      id: 5,
-      name: "Lexus RX 350",
-      category: "Luxury",
-      image: car7,
-      location: "Lagos, Nigeria",
-      price: 95000,
-      rating: 4.9,
-      reviews: 27,
-      transmission: "Automatic",
-      seats: "5 Seats",
-      fuel: "Petrol",
-      available: true,
-    },
-
-    {
-      id: 6,
-      name: "Honda Civic",
-      category: "Economy",
-      image: car8,
-      location: "Port Harcourt, Rivers",
-      price: 38000,
-      rating: 4.7,
-      reviews: 36,
-      transmission: "Automatic",
-      seats: "5 Seats",
-      fuel: "Petrol",
-      available: true,
-    },
-
-    {
-      id: 7,
-      name: "Mercedes-Benz GLE",
-      category: "Luxury",
-      image: car7,
-      location: "Lagos, Nigeria",
-      price: 135000,
-      rating: 4.9,
-      reviews: 16,
-      transmission: "Automatic",
-      seats: "5 Seats",
-      fuel: "Petrol",
-      available: true,
-    },
-
-    {
-      id: 8,
-      name: "Hyundai Tucson",
-      category: "SUV",
-      image: car8,
-      location: "Ibadan, Oyo",
-      price: 58000,
-      rating: 4.8,
-      reviews: 22,
-      transmission: "Automatic",
-      seats: "5 Seats",
-      fuel: "Petrol",
-      available: true,
-    },
-
-    {
-      id: 9,
-      name: "Kia Sportage",
-      category: "SUV",
-      image: car7,
-      location: "Abuja, Nigeria",
-      price: 60000,
-      rating: 4.7,
-      reviews: 19,
-      transmission: "Automatic",
-      seats: "5 Seats",
-      fuel: "Petrol",
-      available: true,
-    },
-
-    {
-      id: 10,
-      name: "Honda Accord",
-      category: "Economy",
-      image: car8,
-      location: "Lagos, Nigeria",
-      price: 45000,
-      rating: 4.8,
-      reviews: 38,
-      transmission: "Automatic",
-      seats: "5 Seats",
-      fuel: "Petrol",
-      available: true,
-    },
-
-    {
-      id: 11,
-      name: "Toyota Camry",
-      category: "Economy",
-      image: car7,
-      location: "Ibadan, Oyo",
-      price: 48000,
-      rating: 4.8,
-      reviews: 44,
-      transmission: "Automatic",
-      seats: "5 Seats",
-      fuel: "Petrol",
-      available: true,
-    },
-
-    {
-      id: 12,
-      name: "BMW X5",
-      category: "Luxury",
-      image: car8,
-      location: "Abuja, Nigeria",
-      price: 140000,
-      rating: 4.9,
-      reviews: 15,
-      transmission: "Automatic",
-      seats: "5 Seats",
-      fuel: "Petrol",
-      available: true,
-    },
-
-    {
-      id: 13,
-      name: "Ford Explorer",
-      category: "SUV",
-      image: car7,
-      location: "Port Harcourt, Rivers",
-      price: 75000,
-      rating: 4.8,
-      reviews: 21,
-      transmission: "Automatic",
-      seats: "7 Seats",
-      fuel: "Petrol",
-      available: true,
-    },
-
-    {
-      id: 14,
-      name: "Hyundai Elantra",
-      category: "Economy",
-      image: car8,
-      location: "Ibadan, Oyo",
-      price: 35000,
-      rating: 4.6,
-      reviews: 29,
-      transmission: "Automatic",
-      seats: "5 Seats",
-      fuel: "Petrol",
-      available: true,
-    },
-
-    {
-      id: 15,
-      name: "Mercedes-Benz C-Class",
-      category: "Luxury",
-      image: car7,
-      location: "Lagos, Nigeria",
-      price: 110000,
-      rating: 4.9,
-      reviews: 20,
-      transmission: "Automatic",
-      seats: "5 Seats",
-      fuel: "Petrol",
-      available: true,
-    },
-
-    {
-      id: 16,
-      name: "Nissan X-Trail",
-      category: "SUV",
-      image: car8,
-      location: "Abuja, Nigeria",
-      price: 57000,
-      rating: 4.7,
-      reviews: 17,
-      transmission: "Automatic",
-      seats: "5 Seats",
-      fuel: "Petrol",
-      available: true,
-    },
-
-    {
-      id: 17,
-      name: "Toyota Yaris",
-      category: "Economy",
-      image: car7,
-      location: "Ibadan, Oyo",
-      price: 32000,
-      rating: 4.6,
-      reviews: 25,
-      transmission: "Automatic",
-      seats: "5 Seats",
-      fuel: "Petrol",
-      available: true,
-    },
-
-    {
-      id: 18,
-      name: "Audi Q7",
-      category: "Luxury",
-      image: car8,
-      location: "Lagos, Nigeria",
-      price: 145000,
-      rating: 4.9,
-      reviews: 13,
-      transmission: "Automatic",
-      seats: "7 Seats",
-      fuel: "Petrol",
-      available: true,
-    },
-  ];
-
-  /*
-   * Available categories.
+   * Get all vehicle categories automatically
+   * from the shared vehicle data.
    */
   const categories = [
     "All Cars",
-    "SUV",
-    "Economy",
-    "Luxury",
+    ...new Set(vehicles.map((vehicle) => vehicle.category)),
   ];
 
   /*
    * Safely prepare search values.
    */
   const searchLocation =
-    searchData.location
-      ?.toLowerCase()
-      .trim() || "";
+    searchData.location?.toLowerCase().trim() || "";
 
   const searchVehicle =
-    searchData.vehicle
-      ?.toLowerCase()
-      .trim() || "";
+    searchData.vehicle?.toLowerCase().trim() || "";
 
   const searchCategory =
-    searchData.category
-      ?.toLowerCase()
-      .trim() || "";
+    searchData.category?.toLowerCase().trim() || "";
 
   const searchSeats =
-    searchData.seats
-      ?.toLowerCase()
-      .trim() || "";
+    searchData.seats?.toLowerCase().trim() || "";
 
   /*
-   * Check whether the user actually
-   * entered something into the search.
+   * Check whether the user entered
+   * anything into the search form.
    */
   const hasSearch =
     Boolean(searchLocation) ||
@@ -352,108 +60,85 @@ const VehicleCollection = ({ searchData = {} }) => {
     Boolean(searchSeats);
 
   /*
-   * Filter the vehicles.
+   * Filter vehicles using:
    *
-   * There are TWO filtering systems:
-   *
-   * 1. Category buttons
+   * 1. Category selection
    * 2. Search form
    *
-   * The search form uses OR logic.
+   * Search fields use OR logic.
    */
-  const filteredVehicles = vehicles.filter(
-    (vehicle) => {
-      /*
-       * Category button.
-       *
-       * Clicking SUV should show only SUVs.
-       */
-      const matchesActiveCategory =
-        activeCategory === "All Cars" ||
-        vehicle.category === activeCategory;
+  const filteredVehicles = vehicles.filter((vehicle) => {
+    /*
+     * Category filtering.
+     */
+    const matchesActiveCategory =
+      activeCategory === "All Cars" ||
+      vehicle.category === activeCategory;
 
-      if (!matchesActiveCategory) {
-        return false;
-      }
-
-      /*
-       * No search = show all cars in
-       * the selected category.
-       */
-      if (!hasSearch) {
-        return true;
-      }
-
-      /*
-       * Convert vehicle values to lowercase.
-       */
-      const vehicleName =
-        vehicle.name.toLowerCase();
-
-      const vehicleLocation =
-        vehicle.location.toLowerCase();
-
-      const vehicleCategory =
-        vehicle.category.toLowerCase();
-
-      const vehicleSeats =
-        vehicle.seats.toLowerCase();
-
-      /*
-       * Check each search field.
-       */
-      const matchesLocation =
-        Boolean(searchLocation) &&
-        vehicleLocation.includes(
-          searchLocation
-        );
-
-      const matchesVehicle =
-        Boolean(searchVehicle) &&
-        vehicleName.includes(
-          searchVehicle
-        );
-
-      const matchesSearchCategory =
-        Boolean(searchCategory) &&
-        vehicleCategory.includes(
-          searchCategory
-        );
-
-      const matchesSeats =
-        Boolean(searchSeats) &&
-        vehicleSeats.includes(
-          searchSeats
-        );
-
-      /*
-       * OR LOGIC:
-       *
-       * The vehicle only needs to match
-       * one of the filled fields.
-       */
-      return (
-        matchesLocation ||
-        matchesVehicle ||
-        matchesSearchCategory ||
-        matchesSeats
-      );
+    if (!matchesActiveCategory) {
+      return false;
     }
-  );
+
+    /*
+     * If there is no search,
+     * show every vehicle in the category.
+     */
+    if (!hasSearch) {
+      return true;
+    }
+
+    /*
+     * Convert vehicle information to lowercase.
+     */
+    const vehicleName = vehicle.name.toLowerCase();
+    const vehicleLocation = vehicle.location.toLowerCase();
+    const vehicleCategory = vehicle.category.toLowerCase();
+    const vehicleSeats = vehicle.seats.toLowerCase();
+
+    /*
+     * Check each search field.
+     */
+    const matchesLocation =
+      Boolean(searchLocation) &&
+      vehicleLocation.includes(searchLocation);
+
+    const matchesVehicle =
+      Boolean(searchVehicle) &&
+      vehicleName.includes(searchVehicle);
+
+    const matchesSearchCategory =
+      Boolean(searchCategory) &&
+      vehicleCategory.includes(searchCategory);
+
+    const matchesSeats =
+      Boolean(searchSeats) &&
+      vehicleSeats.includes(searchSeats);
+
+    /*
+     * OR logic:
+     * A vehicle only needs to match
+     * one of the entered search fields.
+     */
+    return (
+      matchesLocation ||
+      matchesVehicle ||
+      matchesSearchCategory ||
+      matchesSeats
+    );
+  });
 
   /*
-   * Six vehicles per page.
+   * Display six vehicles per page.
    */
   const vehiclesPerPage = 6;
 
   const totalPages = Math.ceil(
-    filteredVehicles.length /
-      vehiclesPerPage
+    filteredVehicles.length / vehiclesPerPage
   );
 
   /*
-   * Reset pagination when the search or
-   * category changes.
+   * Reset pagination whenever
+   * the search or category changes.
    */
   useEffect(() => {
     setCurrentPage(1);
@@ -466,42 +151,37 @@ const VehicleCollection = ({ searchData = {} }) => {
   ]);
 
   /*
-   * Calculate which six vehicles should
-   * currently be displayed.
+   * Calculate the vehicles for the
+   * current page.
    */
   const startIndex =
-    (currentPage - 1) *
-    vehiclesPerPage;
+    (currentPage - 1) * vehiclesPerPage;
 
-  const visibleVehicles =
-    filteredVehicles.slice(
-      startIndex,
-      startIndex + vehiclesPerPage
-    );
+  const visibleVehicles = filteredVehicles.slice(
+    startIndex,
+    startIndex + vehiclesPerPage
+  );
 
   /*
    * Reveal the section when it enters
    * the viewport.
    */
   useEffect(() => {
-    const section =
-      collectionRef.current;
+    const section = collectionRef.current;
 
     if (!section) return;
 
-    const observer =
-      new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-
-            observer.unobserve(section);
-          }
-        },
-        {
-          threshold: 0.1,
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(section);
         }
-      );
+      },
+      {
+        threshold: 0.1,
+      }
+    );
 
     observer.observe(section);
 
@@ -511,17 +191,15 @@ const VehicleCollection = ({ searchData = {} }) => {
   }, []);
 
   /*
-   * Category selection.
+   * Handle category selection.
    */
-  const handleCategoryChange = (
-    category
-  ) => {
+  const handleCategoryChange = (category) => {
     setActiveCategory(category);
     setCurrentPage(1);
   };
 
   /*
-   * Pagination.
+   * Handle pagination.
    */
   const handlePageChange = (page) => {
     setCurrentPage(page);
@@ -535,13 +213,19 @@ const VehicleCollection = ({ searchData = {} }) => {
   };
 
   /*
-   * Temporary booking handler.
+   * Send the selected vehicle to the
+   * booking page.
+   *
+   * localStorage allows the Booking component
+   * to retrieve the selected vehicle.
    */
   const handleBooking = (vehicle) => {
-    console.log(
-      "Selected vehicle:",
-      vehicle
+    localStorage.setItem(
+      "selectedVehicle",
+      JSON.stringify(vehicle)
     );
+
+    navigate("/booking");
   };
 
   /*
@@ -552,7 +236,7 @@ const VehicleCollection = ({ searchData = {} }) => {
   };
 
   /*
-   * Reset everything.
+   * Reset search/category filters.
    */
   const handleReset = () => {
     setActiveCategory("All Cars");
@@ -569,10 +253,9 @@ const VehicleCollection = ({ searchData = {} }) => {
           : ""
       }`}
     >
-
       <div className="vehicle-collection-container">
 
-        {/* =================================
+        {/* ================================
             HEADER
         ================================= */}
 
@@ -586,7 +269,7 @@ const VehicleCollection = ({ searchData = {} }) => {
 
             <h2>
               Find your
-              <span>perfect ride.</span>
+              <span> perfect ride.</span>
             </h2>
 
             <p>
@@ -611,7 +294,7 @@ const VehicleCollection = ({ searchData = {} }) => {
 
         </div>
 
-        {/* =================================
+        {/* ================================
             CATEGORY BUTTONS
         ================================= */}
 
@@ -619,33 +302,29 @@ const VehicleCollection = ({ searchData = {} }) => {
 
           <div className="vehicle-collection-category-list">
 
-            {categories.map(
-              (category) => (
-                <button
-                  key={category}
-                  type="button"
-                  className={`vehicle-collection-category-button ${
-                    activeCategory ===
-                    category
-                      ? "vehicle-collection-category-active"
-                      : ""
-                  }`}
-                  onClick={() =>
-                    handleCategoryChange(
-                      category
-                    )
-                  }
-                >
-                  {category}
-                </button>
-              )
-            )}
+            {categories.map((category) => (
+              <button
+                key={category}
+                type="button"
+                className={`vehicle-collection-category-button ${
+                  activeCategory === category
+                    ? "vehicle-collection-category-active"
+                    : ""
+                }`}
+                onClick={() =>
+                  handleCategoryChange(category)
+                }
+              >
+                {category}
+              </button>
+            ))}
 
           </div>
 
           <span className="vehicle-collection-count">
 
             {filteredVehicles.length}{" "}
+
             {filteredVehicles.length === 1
               ? "vehicle"
               : "vehicles"}
@@ -654,7 +333,7 @@ const VehicleCollection = ({ searchData = {} }) => {
 
         </div>
 
-        {/* =================================
+        {/* ================================
             VEHICLE GRID
         ================================= */}
 
@@ -820,14 +499,17 @@ const VehicleCollection = ({ searchData = {} }) => {
                         type="button"
                         className="vehicle-collection-book-button"
                         onClick={() =>
-                          handleBooking(
-                            vehicle
-                          )
+                          handleBooking(vehicle)
                         }
+                        disabled={!vehicle.available}
                       >
-                        Book Now
+                        {vehicle.available
+                          ? "Book Now"
+                          : "Unavailable"}
 
-                        <FiArrowRight />
+                        {vehicle.available && (
+                          <FiArrowRight />
+                        )}
 
                       </button>
 
@@ -844,7 +526,7 @@ const VehicleCollection = ({ searchData = {} }) => {
 
         ) : (
 
-          /* =================================
+          /* ================================
              NO RESULTS
           ================================= */
 
@@ -876,7 +558,7 @@ const VehicleCollection = ({ searchData = {} }) => {
 
         )}
 
-        {/* =================================
+        {/* ================================
             PAGINATION
         ================================= */}
 
@@ -887,9 +569,7 @@ const VehicleCollection = ({ searchData = {} }) => {
             <button
               type="button"
               className="vehicle-collection-page-arrow"
-              disabled={
-                currentPage === 1
-              }
+              disabled={currentPage === 1}
               onClick={() =>
                 handlePageChange(
                   currentPage - 1
@@ -912,8 +592,7 @@ const VehicleCollection = ({ searchData = {} }) => {
                     key={index + 1}
                     type="button"
                     className={`vehicle-collection-page-number ${
-                      currentPage ===
-                      index + 1
+                      currentPage === index + 1
                         ? "vehicle-collection-page-active"
                         : ""
                     }`}
@@ -935,8 +614,7 @@ const VehicleCollection = ({ searchData = {} }) => {
               type="button"
               className="vehicle-collection-page-arrow"
               disabled={
-                currentPage ===
-                totalPages
+                currentPage === totalPages
               }
               onClick={() =>
                 handlePageChange(
@@ -952,36 +630,43 @@ const VehicleCollection = ({ searchData = {} }) => {
 
         )}
 
-        {/* PAGINATION INFORMATION */}
+        {/* ================================
+            PAGINATION INFORMATION
+        ================================= */}
 
         {filteredVehicles.length > 0 && (
 
           <div className="vehicle-collection-pagination-info">
 
             Showing{" "}
+
             <strong>
               {startIndex + 1}
-            </strong>{" "}
-            -{" "}
+            </strong>
+
+            {" "}-{" "}
+
             <strong>
               {Math.min(
                 startIndex +
                   vehiclesPerPage,
                 filteredVehicles.length
               )}
-            </strong>{" "}
-            of{" "}
+            </strong>
+
+            {" "}of{" "}
+
             <strong>
               {filteredVehicles.length}
-            </strong>{" "}
-            vehicles
+            </strong>
+
+            {" "}vehicles
 
           </div>
 
         )}
 
       </div>
-
     </section>
   );
 };
