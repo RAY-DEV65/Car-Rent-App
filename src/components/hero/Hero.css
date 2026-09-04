@@ -51,8 +51,8 @@
   animation-delay: 0.5s;
 }
 
-.ride-btn {
-  display: flex;
+.hero-btn {
+  display: inline;
   border: none;
   cursor: pointer;
   padding: 19px 35px;
@@ -65,6 +65,7 @@
   animation-delay: 0.8s;
   transition: all 0.3s ease;
   background: #3c009d;
+  text-decoration: none;
 }
 
 .ride-btn:hover {

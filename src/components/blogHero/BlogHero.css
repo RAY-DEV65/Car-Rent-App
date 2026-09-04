@@ -88,7 +88,7 @@
   display: inline-flex;
   align-items: center;
   margin-bottom: 17px;
-  color: #a985c8;
+  color: #3c009d;
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.13em;
@@ -311,7 +311,7 @@
 }
 
 .blog-hero-meta > span:first-child {
-  color: #b995d5;
+  color: #3c009d;
   font-size: 0.65rem;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -375,7 +375,7 @@
   align-items: center;
   gap: 7px;
   border: none;
-  color: #c39adf;
+  color: #3c009d;
   background: transparent;
   font-family: inherit;
   font-size: 0.7rem;

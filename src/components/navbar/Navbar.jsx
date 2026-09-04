@@ -43,10 +43,10 @@ const Navbar = () => {
           <Link to="/car">Car</Link>
           <Link to="/about">About</Link>
           <Link to="/blog">Blog</Link>
-          <Link to="">Contact</Link>
+          <Link to="/contact">Contact</Link>
         </div>
 
-        <button className="navbar-button">Book a Car</button>
+        <Link to="/booking" className="navbar-button">Book a Car</Link>
 
         <button
           className="menu-button"
@@ -100,15 +100,15 @@ const Navbar = () => {
             <span>Blog</span>
           </Link>
 
-          <a href="" onClick={closeMenu}>
+          <Link to="/contact" href="" onClick={closeMenu}>
             <FiPhone />
             <span>Contact</span>
-          </a>
+          </Link>
         </div>
 
-        <button className="mobile-book-button" onClick={closeMenu}>
+        <Link to="/booking" className="mobile-book-button" onClick={closeMenu}>
           Book a Car
-        </button>
+        </Link>
       </div>
     </>
   );

@@ -5,6 +5,7 @@ import About from "./pages/About";
 import Car from "./pages/Car";
 import Blog from "./pages/Blog";
 import Booking from "./components/carBooking/Booking";
+import Contact from "./components/contact/Contact";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="/car" element={<Car />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/booking" element={<Booking />} />
+        <Route path="/contact" element={<Contact />} />
       </Route>
     </Routes>
   );

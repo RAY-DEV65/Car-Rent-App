@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Hero.css";
 
 
@@ -16,7 +17,7 @@ const Hero = () => {
           <p>
             Premium cars. Best prices <br /> Exceptional services
           </p>
-          <button className="ride-btn">Book Your Ride</button>
+          <Link to="/booking" className="hero-btn">Book Your Ride</Link>
         </div>
 
       </div>

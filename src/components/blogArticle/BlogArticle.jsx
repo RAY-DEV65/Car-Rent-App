@@ -61,6 +61,7 @@ A smaller car can be ideal for city trips, while an SUV may be a better choice f
 It is also worth checking the vehicle's fuel type, transmission, comfort and overall condition before making your decision.
 
 The best rental car is not always the most expensive one. It is the vehicle that fits your journey comfortably and reliably.
+
       `,
     },
 

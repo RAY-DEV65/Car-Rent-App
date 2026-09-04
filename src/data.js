@@ -254,7 +254,7 @@ export const vehicles = [
     transmission: "Automatic",
     seats: "5 Seats",
     fuel: "Petrol",
-    available: true,
+    available: false,
   },
 
   {
@@ -269,11 +269,7 @@ export const vehicles = [
     transmission: "Automatic",
     seats: "7 Seats",
     fuel: "Petrol",
-    available: true,
+    available: false,
   },
 ];
 
-/*
- * Available categories.
- */
-const categories = ["All Cars", "SUV", "Economy", "Luxury"];
