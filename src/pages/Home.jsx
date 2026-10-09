@@ -6,7 +6,7 @@ import CustomerReview from "../components/customer-review/CustomerReview";
 import Hero from "../components/hero/Hero";
 import HowItWorks from "../components/how-it-work/HowItWorks";
 import PopularVehicles from "../components/popular-vehicles/PopularVehicles";
-import Search from "../components/search/search";
+import Search from "../components/search/Search";
 import SectionHeading from "../components/section-heading/SectionHeading";
 import WhyChooseUs from "../components/why-choose-us/WhyChooseUs";
 
